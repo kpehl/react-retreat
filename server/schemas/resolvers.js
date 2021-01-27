@@ -29,7 +29,7 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'Bookings.Rooms',
+          path: 'bookings.rooms',
           populate: 'category'
         });
 
@@ -43,7 +43,7 @@ const resolvers = {
     booking: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'Bookings.Rooms',
+          path: 'bookings.rooms',
           populate: 'category'
         });
 

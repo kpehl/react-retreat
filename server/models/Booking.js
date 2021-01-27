@@ -7,6 +7,18 @@ const bookingSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  bookingDateStart: {
+    type: Date,
+    default: Date.now
+  },
+  bookingDuration: {
+    type: Number,
+    default: 1
+  },
+  confirmed: {
+    type: Boolean,
+    default: false
+  },
   bookings: [
     {
       type: Schema.Types.ObjectId,
