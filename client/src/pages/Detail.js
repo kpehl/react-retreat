@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 
-import { QUERY_PRODUCTS } from "../utils/queries";
+import { QUERY_ROOMS } from "../utils/queries";
 import spinner from '../assets/spinner.gif'
 
-import { UPDATE_PRODUCTS, REMOVE_FROM_CART, UPDATE_CART_QUANTITY, ADD_TO_CART } from '../utils/actions';
+import { UPDATE_ROOMS, REMOVE_FROM_CART, UPDATE_CART_QUANTITY, ADD_TO_CART } from '../utils/actions';
 
 import Cart from "../components/Cart";
 
@@ -22,39 +22,39 @@ function Detail() {
   
   const [currentProduct, setCurrentProduct] = useState({})
   
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(QUERY_ROOMS);
   
-  const { products, cart } = state;
+  const { rooms, cart } = state;
   
   useEffect(() => {
     // data already in the global state
-    if (products.length) {
-      setCurrentProduct(products.find(product => product._id === id));
+    if (rooms.length) {
+      setCurrentProduct(rooms.find(room => room._id === id));
     } else if (data) {
       // retrieve data from the server
       dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products
+        type: UPDATE_ROOMS,
+        rooms: data.rooms
       });
       // and store that data in IndexedDB
-      data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+      data.rooms.forEach((room) => {
+        idbPromise('rooms', 'put', room);
       });
     // if the user is offline, use the cached data in IndexedDB
     } else if (!loading) {
-      idbPromise('products', 'get').then((indexedProducts) => {
+      idbPromise('rooms', 'get').then((indexedRooms) => {
         dispatch({
-          type: UPDATE_PRODUCTS,
-          products: indexedProducts
+          type: UPDATE_ROOMS,
+          rooms: indexedRooms
         });
       });
     }
-  }, [products, data, loading, dispatch, id]);
+  }, [rooms, data, loading, dispatch, id]);
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
 
-    // if the product is already in the cart, update the quantity instead of adding duplicate items
+    // if the room is already in the cart, update the quantity instead of adding duplicate items
     if (itemInCart) {
       dispatch({
         type: UPDATE_CART_QUANTITY,
@@ -66,11 +66,11 @@ function Detail() {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
-    // if the product is not yet in the cart, add it
+    // if the room is not yet in the cart, add it
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...currentProduct, purchaseQuantity: 1 }
+        room: { ...currentProduct, purchaseQuantity: 1 }
       });
       // and also store in IndexedDB
       idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
@@ -78,12 +78,12 @@ function Detail() {
   };
 
   const removeFromCart = () => {
-    // remove the product from the cart
+    // remove the room from the cart
     dispatch({
       type: REMOVE_FROM_CART,
       _id: currentProduct._id
     });
-    // update IndexedDB to reflect the deleted product
+    // update IndexedDB to reflect the deleted room
     idbPromise('cart', 'delete', { ...currentProduct })
   };
 
@@ -92,7 +92,7 @@ function Detail() {
       {currentProduct ? (
         <div className="container my-1">
           <Link to="/">
-            ← Back to Products
+            ← Back to Rooms
           </Link>
 
           <h2>{currentProduct.name}</h2>

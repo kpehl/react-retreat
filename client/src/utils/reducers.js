@@ -1,10 +1,9 @@
 // import actions
 import {
-    UPDATE_PRODUCTS,
+    UPDATE_ROOMS,
     UPDATE_CATEGORIES,
     UPDATE_CURRENT_CATEGORY,
     ADD_TO_CART,
-    ADD_MULTIPLE_TO_CART,
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
     CLEAR_CART,
@@ -13,7 +12,7 @@ import {
 
 // Set default state  
 const defaultState = {
-    products: [],
+    rooms: [],
     categories: [],
     currentCategory: '',
     cart: [],
@@ -23,11 +22,11 @@ const defaultState = {
 // Root reducer
 const reducer = (state=defaultState, action) => {
     switch (action.type) {
-        // if the action type value is the value of `UPDATE_PRODUCTS`, return a new state object with an updated products array
-        case UPDATE_PRODUCTS:
+        // if the action type value is the value of `UPDATE_ROOMS`, return a new state object with an updated rooms array
+        case UPDATE_ROOMS:
             return {
                 ...state,
-                products: [...action.products],
+                rooms: [...action.rooms],
             };
         // if the action type value is the value of `UPDATE_CATEGORIES`, return a new state object with an updated categories array
         case UPDATE_CATEGORIES:
@@ -46,18 +45,12 @@ const reducer = (state=defaultState, action) => {
             return {
               ...state,
               cartOpen: true,
-              cart: [...state.cart, action.product]  
-            };
-        // if the action type is ADD_MULTIPLE_TO_CART, return a new state object with the updated cart object
-        case ADD_MULTIPLE_TO_CART:
-            return {
-                ...state,
-                cart: [...state.cart, ...action.products]
+              cart: [...state.cart, action.room]  
             };
         // if the action type is REMOVE_FROM_CART, return a new state object with the updated cart and close the cart if last item is removed
         case REMOVE_FROM_CART:
-            let newState = state.cart.filter(product => {
-                return product._id !== action._id;
+            let newState = state.cart.filter(room => {
+                return room._id !== action._id;
             });
             
             return {
@@ -66,16 +59,16 @@ const reducer = (state=defaultState, action) => {
                 cart: newState
             };
         // if the action type is UPDATE_CART_QUANTITY, return a new state object with the updated cart, updating only the quantity of the specified
-        // product ID and returning product for unchanged products
+        // room ID and returning room for unchanged rooms
         case UPDATE_CART_QUANTITY:
             return {
                 ...state,
                 cartOpen: true,
-                cart: state.cart.map(product => {
-                    if (action._id === product._id) {
-                        product.purchaseQuantity = action.purchaseQuantity;
+                cart: state.cart.map(room => {
+                    if (action._id === room._id) {
+                        room.purchaseQuantity = action.purchaseQuantity;
                     }
-                    return product;
+                    return room;
                 })
             };
         // if the action type is CLEAR_CART, return a new state object with the cart emptied and closed
