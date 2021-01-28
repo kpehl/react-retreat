@@ -16,6 +16,28 @@ export const QUERY_ROOMS = gql`
   }
 `;
 
+export const QUERY_ADMIN = gql`
+{
+  users {
+    firstName
+    lastName
+    bookings {
+      _id
+      purchaseDate
+      rooms {
+        _id
+        name
+        description
+        price
+        quantity
+        image
+      }
+    }
+  }
+}
+`;
+
+
 export const QUERY_ALL_ROOMS = gql`
   {
     rooms {
