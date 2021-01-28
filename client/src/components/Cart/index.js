@@ -25,9 +25,9 @@ const Cart = () => {
         // async function to get data from IndexedDB
         async function getCart() {
             const cart = await idbPromise('cart', 'get');
-            dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+            dispatch({ type: ADD_MULTIPLE_TO_CART, room: [...cart] });
         };
-        // check global state for any cart products, and if not, use function to retrieve data from the IndexedDB store
+        // check global state for any cart room, and if not, use function to retrieve data from the IndexedDB store
         if (!state.cart.length) {
             getCart();
         }
@@ -65,7 +65,7 @@ const Cart = () => {
         const productIds = [];
 
         getCheckout({
-            variables: { products: productIds }
+            variables: { room: productIds }
         });
 
         state.cart.forEach((item) => {
