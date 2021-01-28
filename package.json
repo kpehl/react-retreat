@@ -16,6 +16,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "if-env": "^1.0.4",
+    "react-icons": "^4.1.0",
     "react-responsive-carousel": "^3.2.11"
   },
   "devDependencies": {
