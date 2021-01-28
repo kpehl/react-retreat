@@ -16,7 +16,7 @@ function ReservationHistory() {
     <>
       <div className="container my-1">
         <Link to="/">
-          ← Back to Products
+          ← Back to Reservations
           </Link>
 
         {users ? (
