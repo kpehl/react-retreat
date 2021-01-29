@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_ADMIN } from "../utils/queries";
+import { QUERY_USER } from "../utils/queries";
 
 function ReservationHistory() {
-  const { data } = useQuery(QUERY_ADMIN);
+  const { data } = useQuery(QUERY_USER);
   let users;
 
   if (data) {

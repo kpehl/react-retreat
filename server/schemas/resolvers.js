@@ -27,13 +27,14 @@ const resolvers = {
       return await Room.findById(_id).populate('category');
     },
     user: async (parent, args, context) => {
+      console.log('hi user query')
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'bookings.rooms',
           populate: 'category'
         });
 
-        user.Bookings.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        user.bookings.sort((a, b) => b.purchaseDate - a.purchaseDate);
 
         return user;
       }

@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
 
+function retrieveUser() {
+
+}
+
 function Nav() {
   const { data } = useQuery(QUERY_USER);
   let user;
-
+  console.log(data)
   if (data) {
     user = data.user;
   }
-console.log(user)
+ 
   function showNavigation(user) {
-    if (Auth.loggedIn()) {
+     if (Auth.loggedIn() /*&& !user.admin*/) {
       return (
         <ul className="flex-row">
           <li className="mx-1">
@@ -27,18 +31,27 @@ console.log(user)
               Logout
             </a>
           </li>
-          
-           { user.admin ?
-            <li>
-              <Link to="/admin">
-              Admin
-            </Link>
-            </li>
-            :null}
-        
         </ul>
       );
-    } else {
+    } /*else if (Auth.loggedIn() && user.admin) {
+      return (
+        <ul className="flex-row">
+          <li className="mx-1">
+            <Link to="/admin">
+              Admin
+        </Link>
+          </li>
+          <li className="mx-1">
+            {/* this is not using the Link component to logout or user and then refresh the application to the start }
+            <a href="/" onClick={() => Auth.logout()}>
+              Logout
+        </a>
+          </li>
+        </ul>
+      )
+    }
+
+    */else {
       return (
         <ul className="flex-row">
           <li className="mx-1">
