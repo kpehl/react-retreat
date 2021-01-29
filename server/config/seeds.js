@@ -76,8 +76,8 @@ db.once('open', async () => {
     admin: false,
     bookings: [
       {
-        rooms: [rooms[0]._id],
-        rooms: [rooms[1]._id]
+        rooms: [rooms[3]._id],
+        rooms: [rooms[4]._id]
       }
     ]
   });
