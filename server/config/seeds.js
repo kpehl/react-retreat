@@ -74,12 +74,9 @@ db.once('open', async () => {
     email: 'pamela@testmail.com',
     password: 'password12345',
     admin: false,
-    bookings: [
-      {
-        rooms: [rooms[3]._id],
-        rooms: [rooms[4]._id]
-      }
-    ]
+    bookings: {
+      _id: '60135b2846f28022c06bbd19'
+    }
   });
 
   await User.create({

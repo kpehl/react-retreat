@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
 import Home from "./pages/Home";
+import Admin from "./pages/Admin";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
@@ -37,6 +38,7 @@ function App() {
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route exact path="/rooms/:id" component={Detail} />
               <Route exact path="/success" component={Success} />
+              <Route exact path="/admin" component={Admin} />
               <Route component={NoMatch} />
             </Switch>
         </div>

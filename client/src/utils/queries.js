@@ -67,6 +67,7 @@ export const QUERY_USER = gql`
   user {
     firstName
     lastName
+    admin
     bookings {
       _id
       purchaseDate

@@ -1,10 +1,18 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import { useQuery } from '@apollo/react-hooks';
+import { QUERY_USER } from "../../utils/queries";
 
 function Nav() {
+  const { data } = useQuery(QUERY_USER);
+  let user;
 
-  function showNavigation() {
+  if (data) {
+    user = data.user;
+  }
+console.log(user)
+  function showNavigation(user) {
     if (Auth.loggedIn()) {
       return (
         <ul className="flex-row">
@@ -19,6 +27,15 @@ function Nav() {
               Logout
             </a>
           </li>
+          
+           { user.admin ?
+            <li>
+              <Link to="/admin">
+              Admin
+            </Link>
+            </li>
+            :null}
+        
         </ul>
       );
     } else {
@@ -49,7 +66,7 @@ function Nav() {
       </h1>
 
       <nav>
-        {showNavigation()}
+        {showNavigation(user)}
       </nav>
     </header>
   );
