@@ -61,6 +61,28 @@ export const QUERY_USER = gql`
 }
 `;
 
+export const QUERY_ALL_USERS = gql`
+{
+  users {
+    firstName
+    lastName
+    email
+    password
+    bookings {
+      _id
+      purchaseDate
+      rooms {
+        _id
+        name
+        description
+        price
+        quantity
+      }
+    }
+  }
+}
+`;
+
 export const QUERY_CHECKOUT = gql`
   query getCheckout($rooms: [ID]!) {
     checkout(rooms: $rooms) {
