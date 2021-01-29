@@ -40,6 +40,13 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    users: async (parent, args, context) => {
+      if (context.user) {
+        return await User.find();
+      }
+
+      throw new AuthenticationError('Not authorized');
+    },
     booking: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -97,7 +104,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addBooking: async (parent, { Rooms }, context) => {
+    addOrder: async (parent, { Rooms }, context) => {
       console.log(context);
       if (context.user) {
         const booking = new Booking({ Rooms });
