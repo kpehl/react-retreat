@@ -59,17 +59,10 @@ export const QUERY_ALL_USERS = gql`
     firstName
     lastName
     email
+    admin
     password
     bookings {
       _id
-      purchaseDate
-      rooms {
-        _id
-        name
-        description
-        price
-        quantity
-      }
     }
   }
 }

@@ -4,20 +4,18 @@ import { Link } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
 
-function retrieveUser() {
-
-}
-
 function Nav() {
   const { data } = useQuery(QUERY_USER);
   let user;
+  let admin;
   console.log(data)
   if (data) {
     user = data.user;
+    admin = data.user.admin;
   }
  
   function showNavigation(user) {
-     if (Auth.loggedIn() /*&& !user.admin*/) {
+     if (Auth.loggedIn() && !admin) {
       return (
         <ul className="flex-row">
           <li className="mx-1">
@@ -33,7 +31,7 @@ function Nav() {
           </li>
         </ul>
       );
-    } /*else if (Auth.loggedIn() && user.admin) {
+    } else if (Auth.loggedIn() && admin) {
       return (
         <ul className="flex-row">
           <li className="mx-1">
@@ -42,7 +40,7 @@ function Nav() {
         </Link>
           </li>
           <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start }
+            {/* this is not using the Link component to logout or user and then refresh the application to the start*/ }
             <a href="/" onClick={() => Auth.logout()}>
               Logout
         </a>
@@ -51,7 +49,7 @@ function Nav() {
       )
     }
 
-    */else {
+    else {
       return (
         <ul className="flex-row">
           <li className="mx-1">
@@ -73,8 +71,8 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">hotel image goes here</span>
-          -Name of Hotel
+          <span role="img" aria-label="shopping bag">🏨</span>
+          React Retreat
         </Link>
       </h1>
 
