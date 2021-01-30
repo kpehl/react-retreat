@@ -48,6 +48,13 @@ export const QUERY_USER = gql`
     admin
     bookings {
       _id
+      purchaseDate
+      bookingDateStart
+      bookingDateEnd
+      room { 
+        name
+        price
+       }
     }
   }
 }

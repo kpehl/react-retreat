@@ -14,13 +14,13 @@ function Nav() {
     admin = data.user.admin;
   }
  
-  function showNavigation(user) {
+  function showNavigation() {
      if (Auth.loggedIn() && !admin) {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/orderHistory">
-              Reservation History
+            <Link to="/bookingHistory">
+              Booking History
             </Link>
           </li>
           <li className="mx-1">
@@ -37,19 +37,17 @@ function Nav() {
           <li className="mx-1">
             <Link to="/admin">
               Admin
-        </Link>
+            </Link>
           </li>
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start*/ }
             <a href="/" onClick={() => Auth.logout()}>
               Logout
-        </a>
+            </a>
           </li>
         </ul>
       )
-    }
-
-    else {
+    } else {
       return (
         <ul className="flex-row">
           <li className="mx-1">
@@ -71,13 +69,13 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🏨</span>
+          <span role="img" aria-label="hotel building">🏨</span>
           React Retreat
         </Link>
       </h1>
 
       <nav>
-        {showNavigation(user)}
+        {showNavigation()}
       </nav>
     </header>
   );

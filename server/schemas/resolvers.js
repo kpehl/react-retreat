@@ -27,14 +27,13 @@ const resolvers = {
       return await Room.findById(_id).populate('category');
     },
     user: async (parent, args, context) => {
-      console.log('hi user query')
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'bookings.rooms',
+          path: 'bookings.room',
           populate: 'category'
         });
 
-        user.bookings.sort((a, b) => b.purchaseDate - a.purchaseDate);
+        user.bookings.sort((a, b) => b.bookingDateStart - a.bookingDateStart);
 
         return user;
       }
@@ -43,7 +42,10 @@ const resolvers = {
     },
     users: async (parent, args, context) => {
       if (context.user) {
-        return await User.find();
+        return await User.find().populate({
+          path: 'bookings.room',
+          populate: 'category'
+        });
       }
 
       throw new AuthenticationError('Not authorized');
@@ -51,11 +53,11 @@ const resolvers = {
     booking: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: 'bookings.rooms',
+          path: 'bookings.room',
           populate: 'category'
         });
 
-        return user.Bookings.id(_id);
+        return user.bookings.id(_id);
       }
 
       throw new AuthenticationError('Not logged in');

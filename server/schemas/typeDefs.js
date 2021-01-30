@@ -24,9 +24,9 @@ const typeDefs = gql`
     _id: ID
     purchaseDate: String
     bookingDateStart: String
-    bookingDuration: String
+    bookingDateEnd: String
     confirmed: Boolean
-    bookings: [Room]
+    room: [Room]
   }
 
   type User {

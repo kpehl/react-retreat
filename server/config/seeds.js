@@ -5,11 +5,9 @@ db.once('open', async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Suite' },
-    { name: 'King' },
-    { name: 'Double Queen' },
-    { name: 'Queen' },
-    { name: 'Full' }
+    { name: 'Premium' },
+    { name: 'Standard' },
+    { name: 'Economy' }
   ]);
 
   console.log('categories seeded');
@@ -31,13 +29,13 @@ db.once('open', async () => {
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
       image: 'canned-coffee.jpg',
-      category: categories[1]._id,
+      category: categories[0]._id,
       price: 179.99,
       quantity: 15
     },
     {
       name: 'Double Queen',
-      category: categories[2]._id,
+      category: categories[1]._id,
       description:
         'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
       image: 'toilet-paper.jpg',
@@ -46,7 +44,7 @@ db.once('open', async () => {
     },
     {
       name: 'Queen',
-      category: categories[3]._id,
+      category: categories[1]._id,
       description:
         'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
       image: 'soap.jpg',
@@ -55,7 +53,7 @@ db.once('open', async () => {
     },
     {
       name: 'Full',
-      category: categories[4]._id,
+      category: categories[2]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
       image: 'wooden-spoons.jpg',
@@ -74,9 +72,22 @@ db.once('open', async () => {
     email: 'pamela@testmail.com',
     password: 'password12345',
     admin: false,
-    bookings: {
-      _id: '60135b2846f28022c06bbd19'
-    }
+    bookings: [
+      {
+        purchaseDate: '01/15/2020',
+        bookingDateStart: '02/12/2020',
+        bookingDateEnd: '02/15/2020',
+        confirmed: true,
+        room: [rooms[1]]
+      },
+      {
+        purchaseDate: '01/29/2020',
+        bookingDateStart: '04/02/2020',
+        bookingDateEnd: '04/11/2020',
+        confirmed: true,
+        room: [rooms[3]]
+      }
+    ]
   });
 
   await User.create({
@@ -84,7 +95,16 @@ db.once('open', async () => {
     lastName: 'Holt',
     email: 'eholt@testmail.com',
     password: 'password12345',
-    admin: false
+    admin: false,
+    bookings: [
+      {
+        purchaseDate: '01/01/2020',
+        bookingDateStart: '06/05/2020',
+        bookingDateEnd: '06/13/2020',
+        confirmed: true,
+        room: [rooms[4]]
+      }
+    ]
   });
 
   await User.create({
