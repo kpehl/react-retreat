@@ -29,6 +29,13 @@ const roomSchema = new Schema({
     ref: 'Category',
     required: true
   },
+  bookings: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Booking',
+      required: false
+    }
+  ]
 });
 
 const Room = mongoose.model('Room', roomSchema);
