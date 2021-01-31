@@ -13,6 +13,7 @@ import Nav from "./components/Nav";
 import BookingHistory from "./pages/BookingHistory";
 import Reservation from "./pages/Reservation";
 import Success from "./pages/Success";
+import Footer from "./components/Footer";
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -43,6 +44,7 @@ function App() {
               <Route exact path="/admin" component={Admin} />
               <Route component={NoMatch} />
             </Switch>
+            <Footer />
         </div>
       </Router>
     </ApolloProvider>

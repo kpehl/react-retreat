@@ -1,8 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import { Link } from "react-router-dom"
 
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_USER, QUERY_ALL_USERS } from "../utils/queries";
+import { QUERY_ALL_USERS } from "../utils/queries";
+
+import SingleUserDetail from '../components/SingleUserDetail'
 
 function ReservationHistory() {
   const { data } = useQuery(QUERY_ALL_USERS);
@@ -10,6 +12,14 @@ function ReservationHistory() {
 
   if (data) {
     users = data.users;
+  }
+
+  const [showDetails, setShowDetails] = useState(false);
+  const toggleDetails = () => {
+      setShowDetails(showDetails => !showDetails)
+  };
+  const clickHandler = (user) => {
+    toggleDetails();
   }
 
   return (
@@ -31,6 +41,8 @@ function ReservationHistory() {
                 <p>
                   Number of bookings: {user.bookings.length}
                 </p>
+                <button id={user._id} key={user._id} onClick={(user) => clickHandler(user)}>Details</button>
+                { showDetails ? <SingleUserDetail bookings={user.bookings} /> : null}
               </div>
             ))}
           </>

@@ -54,6 +54,7 @@ export const QUERY_USER = gql`
       room { 
         name
         price
+        _id
        }
     }
   }
@@ -63,6 +64,7 @@ export const QUERY_USER = gql`
 export const QUERY_ALL_USERS = gql`
 {
   users {
+    _id
     firstName
     lastName
     email
@@ -70,6 +72,13 @@ export const QUERY_ALL_USERS = gql`
     password
     bookings {
       _id
+      purchaseDate
+      bookingDateStart
+      bookingDateEnd
+      room { 
+        name
+        price
+       }
     }
   }
 }
