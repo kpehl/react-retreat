@@ -14,10 +14,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.1.4",
     "dotenv": "^8.2.0",
     "if-env": "^1.0.4",
+    "infinite-react-carousel": "^1.2.11",
     "react-icons": "^4.1.0",
-    "react-responsive-carousel": "^3.2.11"
+    "react-responsive-carousel": "^3.2.11",
+    "reactstrap": "^8.9.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
