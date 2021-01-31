@@ -6,22 +6,28 @@ import {
 } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import { useDispatch } from "react-redux";
-import { Calendar } from "react-date-range";
-import { DateRangePicker } from "react-date-range";
-import { addDays } from "date-fns";
+
+
+import { enUS } from 'date-fns/locale'
+import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates'
+import 'react-nice-dates/build/style.css'
+
+
+
 
 const CartItem = ({ item }) => {
   // const state = useSelector((state) => {
   //     return state;
   // });
   const dispatch = useDispatch();
-  const [statedt, setStatedt] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 2),
-      key: "selection",
-    },
-  ]);
+
+  let d = new Date();
+    let n = d.toUTCString();
+
+    const [startDate, setStartDate] = useState()
+    const [endDate, setEndDate] = useState()
+  
+
 
   const removeFromCart = (item) => {
     dispatch({
@@ -50,13 +56,12 @@ const CartItem = ({ item }) => {
     }
   };
 
-  const onDateChange = (e) => {
-    console.log(e);
-    dispatch({
-      type: UPDATE_RESERVATION_DATES,
-      _id: item._id,
-    });
+  const onDateChange = (startDate, endDate) => {
+      console.log("onDateChange");
+    console.log(startDate);
+    console.log(endDate);
   };
+
 
   return (
     <div className="flex-row">
@@ -84,18 +89,35 @@ const CartItem = ({ item }) => {
           </span>
         </div>
         <div className="flex-row">
-          <DateRangePicker
-            onChange={(item) => {
-              setStatedt([item.selection]);
-              onDateChange(item);
-            }}
-            /* onChange={onDateChange} */
-            showSelectionPreview={true}
-            moveRangeOnFirstSelection={false}
-            months={2}
-            ranges={statedt}
-            direction="horizontal"
+            {/* insert date picker */}
+            <DateRangePicker
+      startDate={startDate}
+      endDate={endDate}
+      onStartDateChange={setStartDate}
+      onEndDateChange={setEndDate}
+      minimumDate={new Date()}
+      minimumLength={1}
+      format='dd MMM yyyy'
+      locale={enUS}
+      onChange={onDateChange(startDate, endDate)}
+    >
+      {({ startDateInputProps, endDateInputProps, focus }) => (
+        <div className='date-range'>
+          <input
+            className={'input' + (focus === START_DATE ? ' -focused' : '')}
+            {...startDateInputProps}
+            placeholder='Start date'
           />
+          <span className='date-range_arrow' />
+          <input
+            className={'input' + (focus === END_DATE ? ' -focused' : '')}
+            {...endDateInputProps}
+            placeholder='End date'
+          />
+        </div>
+      )}
+    </DateRangePicker>
+            {/* End Date Picker */}
         </div>
       </div>
     </div>
