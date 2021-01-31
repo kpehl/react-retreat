@@ -1,7 +1,8 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Room, Category, Booking } = require('../models');
+const { populate } = require('../models/User');
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');  // using a test key from Stripe; in Roomion this would be process.env.STRIPE_KEY
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');  // using a test key from Stripe; in Production this would be process.env.STRIPE_KEY
 
 const resolvers = {
   Query: {
@@ -21,56 +22,56 @@ const resolvers = {
         };
       }
 
-      return await Room.find(params).populate('category');
+      return await Room.find(params)
+        .populate('category')
+        .populate('bookings')
+        .populate({
+          path: 'bookings',
+          populate: 'user'
+        });
     },
     room: async (parent, { _id }) => {
-      return await Room.findById(_id).populate('category');
-    },
+      return await Room.findById(_id)
+        .populate('category')
+        .populate('booking')
+        .populate({
+          path: 'bookings',
+          populate: 'user'
+        });
+      },
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'bookings.room',
-          populate: 'category'
-        });
-
-        user.bookings.sort((a, b) => b.bookingDateStart - a.bookingDateStart);
-
-        return user;
+        return await User.findById(context.user._id)
       }
 
       throw new AuthenticationError('Not logged in');
     },
     users: async (parent, args, context) => {
       if (context.user) {
-        return await User.find().populate({
-          path: 'bookings.room',
-          populate: 'category'
-        });
+        return await User.find()
       }
 
       throw new AuthenticationError('Not authorized');
     },
     booking: async (parent, { _id }, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'bookings.room',
-          populate: 'category'
-        });
-
-        return user.bookings.id(_id);
+        return await (await Booking.findById( _id )).populate('user')
       }
 
       throw new AuthenticationError('Not logged in');
     },
+    bookings: async (parent, args, context) => {
+      return await Booking.find().populate('user')
+    },
     checkout: async (parent, args, context) => {
       const booking = new Booking({ Rooms: args.Rooms });
-      const { rooms } = await booking.populate('Rooms').execPopulate();
+      const { rooms } = await booking.populate('rooms').execPopulate();
       const line_items = [];
       const url = new URL(context.headers.referer).origin;
 
-      for (let i = 0; i < Rooms.length; i++) {
+      for (let i = 0; i < rooms.length; i++) {
         // generate room id with Stripe
-        const room = await stripe.Rooms.create({
+        const room = await stripe.rooms.create({
           name: rooms[i].name,
           description: rooms[i].description,
           images: [`${url}/images/${rooms[i].image}`]

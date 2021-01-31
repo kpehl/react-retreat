@@ -2,18 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_USER } from "../utils/queries";
+import { QUERY_USER, QUERY_ROOMS } from "../utils/queries";
 
 function BookingHistory() {
-  const { data } = useQuery(QUERY_USER);
-  let user;
-  let bookings;
+  const { userData } = useQuery(QUERY_USER);
 
-  if (data) {
-    user = data.user;
-    bookings = data.user.bookings
-    console.log(user)
-    console.log(bookings)
+  if (userData) {
+    // let user = userData.user;
+    console.log('user data present')
+    console.log(userData)
+  }
+
+  const { roomData } = useQuery(QUERY_ROOMS);
+
+  if (roomData) {
+    console.log('room data present')
+    console.log(roomData)
   }
 
   return (
@@ -23,7 +27,8 @@ function BookingHistory() {
           ← Back to Home
           </Link>
 
-        {user ? (
+          Test text
+        {/* {user ? (
           <>
             <h2>Booking History for {user.firstName} {user.lastName}</h2>
             <div className="flex-row">
@@ -49,7 +54,7 @@ function BookingHistory() {
               </div>
             ))}
           </>
-        ) : null}
+        ) : null} */}
 
       </div>
 
