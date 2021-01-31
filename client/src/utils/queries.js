@@ -45,17 +45,40 @@ export const QUERY_USER = gql`
   user {
     firstName
     lastName
+    admin
     bookings {
       _id
       purchaseDate
-      rooms {
-        _id
+      bookingDateStart
+      bookingDateEnd
+      room { 
         name
-        description
         price
-        quantity
-        image
-      }
+        _id
+       }
+    }
+  }
+}
+`;
+
+export const QUERY_ALL_USERS = gql`
+{
+  users {
+    _id
+    firstName
+    lastName
+    email
+    admin
+    password
+    bookings {
+      _id
+      purchaseDate
+      bookingDateStart
+      bookingDateEnd
+      room { 
+        name
+        price
+       }
     }
   }
 }

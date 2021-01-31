@@ -11,20 +11,36 @@ export const LOGIN = gql`
   }
 `;
 
+// export const ADMIN = gql`
+//   mutation login($email: String!, $password: String!) {
+//     login(email: $email, password: $password) {
+//       token
+//       user {
+//         _id
+//         admin
+//       }
+//     }
+//   }
+// `;
+
 
 export const ADD_ORDER = gql`
-  mutation addOrder($rooms: [ID]!) {
+  mutation addOrder($rooms: ID!) {
     addOrder(rooms: $rooms) {
       purchaseDate
-      rooms {
-        _id
-      name
-      description
-      price
-      quantity
-      category {
-        name
-      } 
+      bookingDateStart
+      bookingDuration
+      bookings {
+        room {
+          _id
+          name
+          description
+          price
+          quantity
+          category {
+            name
+          } 
+        }
       }
     }
   }

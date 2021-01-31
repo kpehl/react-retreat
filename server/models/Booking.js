@@ -11,15 +11,14 @@ const bookingSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  bookingDuration: {
-    type: Number,
-    default: 1
+  bookingDateEnd: {
+    type: Date
   },
   confirmed: {
     type: Boolean,
     default: false
   },
-  bookings: [
+  room: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Room'
