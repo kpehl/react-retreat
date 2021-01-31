@@ -72,8 +72,9 @@ function Nav() {
       <div className="logo">
       
         <Link to="/">
-        <img src={logo} alt="React Retreat"/>
-          
+        <img src={logo} alt="React Retreat"/>  
+        {/* <span role="img" aria-label="shopping bag">🛍️</span>
+          -Shop-Shop */}
         </Link>
         
 

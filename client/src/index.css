@@ -188,12 +188,8 @@ nav{
 }
 
 .carousel .slide img {
-  max-height: 500px;  /* change this to whatever you want */
-  width: 900px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  max-height: 100%;  /* change this to whatever you want */
+  width: 100%;
 }
 
 
