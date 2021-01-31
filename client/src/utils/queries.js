@@ -54,6 +54,7 @@ export const QUERY_USER = gql`
       room { 
         name
         price
+        _id
        }
     }
   }

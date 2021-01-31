@@ -33,7 +33,7 @@ function BookingHistory() {
               <div key={booking._id} className="my-2">
                 <h4>Confirmation Number: {booking._id}</h4>
                 <div className="flex-row">
-                  {booking.room.map(({ _id, name, price, bookingDateStart, bookingDateEnd }, index) => (
+                  {booking.room.map(({ _id, name, price}, index) => (
                     <div key={index} className="my-2">
                       <Link to={`/rooms/${_id}`}>
                         <p>{name}</p>
