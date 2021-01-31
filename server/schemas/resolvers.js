@@ -62,6 +62,9 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    bookings: async () => {
+      return Booking.find();
+    },
     checkout: async (parent, args, context) => {
       const booking = new Booking({ Rooms: args.Rooms });
       const { rooms } = await booking.populate('Rooms').execPopulate();

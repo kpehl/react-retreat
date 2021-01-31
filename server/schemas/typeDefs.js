@@ -29,6 +29,10 @@ const typeDefs = gql`
     room: [Room]
   }
 
+  type Bookings {
+    bookings: [Booking]
+  }
+
   type User {
     _id: ID
     firstName: String
@@ -60,6 +64,7 @@ const typeDefs = gql`
     user: User
     users: [EditUser]
     booking(_id: ID!): Booking
+    bookings: Booking
     checkout(rooms: [ID]!): Checkout
   }
 

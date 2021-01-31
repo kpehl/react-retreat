@@ -6,6 +6,7 @@ import {
     ADD_TO_CART,
     REMOVE_FROM_CART,
     UPDATE_CART_QUANTITY,
+    UPDATE_RESERVATION_DATES,
     CLEAR_CART,
     TOGGLE_CART
   } from './actions';
@@ -70,6 +71,11 @@ const reducer = (state=defaultState, action) => {
                     }
                     return room;
                 })
+            };
+        // if action type is UPDATE_RESERVATION_DATES, return new state object with updated dates in cart.
+        case UPDATE_RESERVATION_DATES:
+            return{
+                ...state,
             };
         // if the action type is CLEAR_CART, return a new state object with the cart emptied and closed
         case CLEAR_CART:

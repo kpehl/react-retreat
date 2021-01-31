@@ -28,7 +28,7 @@ const roomSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: true
-  }
+  },
 });
 
 const Room = mongoose.model('Room', roomSchema);

@@ -70,6 +70,7 @@ const Cart = () => {
 
         state.cart.forEach((item) => {
             for (let i = 0; i < item.purchaseQuantity; i++) {
+                console.log(item);
                 productIds.push(item._id)
             }
         });
