@@ -48,8 +48,6 @@ function ProductList() {
   function filterRooms() {
     console.log("FILTER");
     if (!currentCategory) {
-
-      console.log(state.rooms);
       return state.rooms;
     }
 
