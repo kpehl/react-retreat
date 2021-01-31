@@ -21,7 +21,7 @@ db.once('open', async () => {
       name: 'Suite',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
+      image: 'imageExample.jpg',
       category: categories[0]._id,
       price: 299.99,
       quantity: 5
