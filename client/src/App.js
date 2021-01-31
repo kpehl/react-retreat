@@ -12,9 +12,7 @@ import Nav from "./components/Nav";
 import OrderHistory from "./pages/OrderHistory";
 import Success from "./pages/Success";
 
-// For the image slider to work
-import ImageSlider from './components/Slider/imageSlider';
-import { SliderData } from './components/Slider/SliderData';
+
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -34,6 +32,7 @@ function App() {
       <Router>
         <div>
             <Nav />
+            
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
@@ -44,7 +43,6 @@ function App() {
               <Route component={NoMatch} />
             </Switch>
         </div>
-        <ImageSlider slides={SliderData} />;
       
       </Router>
     </ApolloProvider>
