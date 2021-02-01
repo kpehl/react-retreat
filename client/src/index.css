@@ -1,25 +1,4 @@
-<<<<<<< HEAD
-:root {
-  --primary: #276678;
-  --secondary: #d3e0ea;
-  --tertiary: #B12704;
-  --light: #f6f5f5;
-  --dark: #276678;
-  --error: rgb(228, 46, 1);
-  --spacing-one: calc(1rem * 0.5);
-  --spacing-two: calc(1rem);
-}
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  min-height: 100%;
-}
-body {
-=======
 /* body {
->>>>>>> develop
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
@@ -179,20 +158,6 @@ nav{
 } 
 
 
-<<<<<<< HEAD
-.logo {
-  position: fixed;
-  top: 50px;
-  z-index: 2;
-}
-
-.logo img {
-  height: 200px;
-  margin-top: -30px;
-}
-/* Message Damaris Campos, Kathleen (Cassie) Pehl, Michael Giddings */
-
-=======
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -380,4 +345,3 @@ input:focus {
     width: 100%;
   }
 }
->>>>>>> develop
