@@ -14,7 +14,7 @@ export default class CustomSlider extends Component {
       <div className="carousel">
         <Slider { ...settings }>
           <div className="slide">
-          <img src="/images/hotel/image1.jpg" alt="Beach"/>
+          <img src="/images/hotel/image5.jpg" alt="Beach"/>
           </div>
           <div className="slide">
           <img src="/images/hotel/image2.jpg" alt="Beach"/>
@@ -26,7 +26,7 @@ export default class CustomSlider extends Component {
           <img src="/images/hotel/image4.jpg" alt="Beach"/>
           </div>
           <div className="slide">
-          <img src="/images/hotel/image5.jpg" alt="Beach"/>
+          <img src="/images/hotel/image6.jpg" alt="Beach"/>
           </div>
         </Slider>
       </div>

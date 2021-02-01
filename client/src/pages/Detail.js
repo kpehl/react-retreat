@@ -120,6 +120,7 @@ function Detail() {
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+          
         </div>
       ) : null}
       {
