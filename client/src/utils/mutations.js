@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -23,8 +23,7 @@ export const LOGIN = gql`
 //   }
 // `;
 
-
-export const ADD_ORDER = gql`
+/* export const ADD_ORDER = gql`
   mutation addOrder($rooms: ID!) {
     addOrder(rooms: $rooms) {
       purchaseDate
@@ -44,12 +43,37 @@ export const ADD_ORDER = gql`
       }
     }
   }
+`; */
+
+export const ADD_ORDER = gql`
+  mutation addOrder($rooms: ID!){
+    addOrder(rooms: $rooms) {
+      purchaseDate
+      bookingDateStart
+      bookingDateEnd
+      rooms{
+        _id
+      }
+      user {
+        _id
+      }
+    }
+  }
 `;
 
-
 export const ADD_USER = gql`
-  mutation addUser($firstName: String!, $lastName: String!, $email: String!, $password: String!) {
-    addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
+  mutation addUser(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+  ) {
+    addUser(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      password: $password
+    ) {
       token
       user {
         _id

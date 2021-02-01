@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { enUS } from 'date-fns/locale'
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates'
 import 'react-nice-dates/build/style.css'
+import { Booking } from "../../../../server/models";
 
 
 
@@ -57,9 +58,17 @@ const CartItem = ({ item }) => {
   };
 
   const onDateChange = (startDate, endDate) => {
-      console.log("onDateChange");
-    console.log(startDate);
-    console.log(endDate);
+/*     if(startDate){
+        dispatch({
+            type: UPDATE_RESERVATION_DATES,
+            _id: item._id,
+            bookingDateStart: startDate,
+            bookingDateEnd: endDate,
+        });
+        idbPromise("cart","put",{...item, bookingDateStart: startDate, bookingDateEnd: endDate });
+    } */
+    
+    console.log(item);
   };
 
 
@@ -99,7 +108,7 @@ const CartItem = ({ item }) => {
       minimumLength={1}
       format='dd MMM yyyy'
       locale={enUS}
-      onChange={onDateChange(startDate, endDate)}
+     /*  onChange={onDateChange(startDate, endDate)} */
     >
       {({ startDateInputProps, endDateInputProps, focus }) => (
         <div className='date-range'>

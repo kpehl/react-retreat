@@ -72,6 +72,17 @@ const reducer = (state=defaultState, action) => {
                     return room;
                 })
             };
+        // if action type is UPDATE_RESERVATION_DATES, return new state object with updated reservation dates.
+        case UPDATE_RESERVATION_DATES:
+            return {
+                ...state,
+                cart: state.cart.map(room => {
+                    if(action._id === room._id){
+                        room.bookings = action.bookings;
+                    }
+                    return room;
+                })
+            };            
         // if action type is UPDATE_RESERVATION_DATES, return new state object with updated dates in cart.
         case UPDATE_RESERVATION_DATES:
             return{

@@ -63,11 +63,7 @@ const typeDefs = gql`
     user: User
     users: [EditUser]
     booking(_id: ID!): Booking
-<<<<<<< HEAD
-    bookings: Booking
-=======
     bookings: [Booking]
->>>>>>> feature/modifications-for-reservation-feature
     checkout(rooms: [ID]!): Checkout
   }
 
