@@ -29,8 +29,7 @@ const userSchema = new Schema({
     type: Boolean,
     required: true,
     default: false
-  },
-  bookings: [Booking.schema]
+  }
 });
 
 // set up pre-save middleware to create password

@@ -1,5 +1,21 @@
 import gql from 'graphql-tag';
 
+export const QUERY_BOOKINGS = gql`
+  {
+    bookings {
+    _id
+    purchaseDate
+    bookingDateStart
+    bookingDateEnd
+    user {
+      _id
+      firstName
+      lastName
+      }
+    }
+  }
+`;
+
 export const QUERY_ROOMS = gql`
   query getRooms($category: ID) {
     rooms(category: $category) {
@@ -12,20 +28,16 @@ export const QUERY_ROOMS = gql`
       category {
         _id
       }
-    }
-  }
-`;
-
-export const QUERY_ALL_ROOMS = gql`
-  {
-    rooms {
-      _id
-      name
-      description
-      price
-      quantity
-      category {
-        name
+      bookings {
+        _id
+        purchaseDate
+        bookingDateStart
+        bookingDateEnd
+        user {
+          _id
+          firstName
+          lastName
+        }
       }
     }
   }
@@ -45,18 +57,22 @@ export const QUERY_USER = gql`
   user {
     firstName
     lastName
-    bookings {
-      _id
-      purchaseDate
-      rooms {
-        _id
-        name
-        description
-        price
-        quantity
-        image
-      }
-    }
+    email
+    admin
+    _id
+  }
+}
+`;
+
+export const QUERY_ALL_USERS = gql`
+{
+  users {
+    _id
+    firstName
+    lastName
+    email
+    admin
+    password
   }
 }
 `;

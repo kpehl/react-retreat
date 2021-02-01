@@ -4,13 +4,15 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
 import Home from "./pages/Home";
+import Admin from "./pages/Admin";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
-import OrderHistory from "./pages/OrderHistory";
+import BookingHistory from "./pages/BookingHistory";
 import Success from "./pages/Success";
+import Footer from "./components/Footer";
 
 
 
@@ -37,11 +39,13 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/orderHistory" component={OrderHistory} />
+              <Route exact path="/bookingHistory" component={BookingHistory} />
               <Route exact path="/rooms/:id" component={Detail} />
               <Route exact path="/success" component={Success} />
+              <Route exact path="/admin" component={Admin} />
               <Route component={NoMatch} />
             </Switch>
+            <Footer />
         </div>
       
       </Router>

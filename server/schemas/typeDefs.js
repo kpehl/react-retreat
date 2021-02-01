@@ -14,6 +14,7 @@ const typeDefs = gql`
     quantity: Int
     price: Float
     category: Category
+    bookings: [Booking]
   }
 
   type Checkout {
@@ -23,6 +24,10 @@ const typeDefs = gql`
   type Booking {
     _id: ID
     purchaseDate: String
+    bookingDateStart: String
+    bookingDateEnd: String
+    confirmed: Boolean
+    user: User
     rooms: [Room]
   }
 
@@ -31,7 +36,16 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    bookings: [Booking]
+    admin: Boolean
+  }
+
+  type EditUser {
+    _id: ID
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+    admin: Boolean
   }
 
   type Auth {
@@ -44,13 +58,15 @@ const typeDefs = gql`
     rooms(category: ID, name: String): [Room]
     room(_id: ID!): Room
     user: User
+    users: [EditUser]
     booking(_id: ID!): Booking
+    bookings: [Booking]
     checkout(rooms: [ID]!): Checkout
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addBooking(rooms: [ID]!): Booking
+    addOrder(rooms: ID!): Booking
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateRoom(_id: ID!, quantity: Int!): Room
     login(email: String!, password: String!): Auth
