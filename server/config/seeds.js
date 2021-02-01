@@ -1,5 +1,6 @@
 const db = require('./connection');
 const { User, Room, Category, Booking } = require('../models');
+const { modelNames } = require('mongoose');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -48,28 +49,28 @@ db.once('open', async () => {
       bookingDateStart: '02/12/2020',
       bookingDateEnd: '02/15/2020',
       confirmed: true,
-      user: [users[0]._id]
+      user: [users[0]._id],
     },
     {
       purchaseDate: '01/29/2020',
       bookingDateStart: '04/02/2020',
       bookingDateEnd: '04/11/2020',
       confirmed: true,
-      user: [users[1]._id]
+      user: [users[1]._id],
     },
     {
       purchaseDate: '01/01/2020',
       bookingDateStart: '06/05/2020',
       bookingDateEnd: '06/13/2020',
       confirmed: true,
-      user: [users[1]._id]
+      user: [users[1]._id],
     },
     {
       purchaseDate: '01/31/2020',
       bookingDateStart: '02/12/2020',
       bookingDateEnd: '02/15/2020',
       confirmed: true,
-      user: [users[1]._id]
+      user: [users[1]._id],
     }
   ]);
 
@@ -132,6 +133,13 @@ db.once('open', async () => {
   ]);
 
   console.log('rooms seeded');
+
+  await Booking.findByIdAndUpdate(bookings[0]._id, {$push: {rooms: rooms[0]._id}}, {upsert: true})
+  await Booking.findByIdAndUpdate(bookings[1]._id, {$push: {rooms: rooms[1]._id}}, {upsert: true})
+  await Booking.findByIdAndUpdate(bookings[2]._id, {$push: {rooms: rooms[1]._id}}, {upsert: true})
+  await Booking.findByIdAndUpdate(bookings[3]._id, {$push: {rooms: rooms[4]._id}}, {upsert: true})
+
+  console.log('rooms added to bookings')
 
   process.exit();
 });

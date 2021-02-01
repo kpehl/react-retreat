@@ -55,13 +55,17 @@ const resolvers = {
     },
     booking: async (parent, { _id }, context) => {
       if (context.user) {
-        return await (await Booking.findById( _id )).populate('user')
+        return await (await Booking.findById( _id ))
+          .populate('user')
+          .populate('rooms')
       }
 
       throw new AuthenticationError('Not logged in');
     },
     bookings: async (parent, args, context) => {
-      return await Booking.find().populate('user')
+      return await Booking.find()
+        .populate('user')
+        .populate('rooms')
     },
     checkout: async (parent, args, context) => {
       const booking = new Booking({ Rooms: args.Rooms });
