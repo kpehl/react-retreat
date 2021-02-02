@@ -164,11 +164,11 @@ code {
 } */
 
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #3a4d64;
+  --secondary: #03941b;
+  --tertiary: #3606b9;
   --light: #fafafa;
-  --dark: #272f32;
+  --dark: #436a79;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -179,11 +179,12 @@ code {
 html,
 body {
   min-height: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -195,7 +196,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -336,6 +336,10 @@ input:focus {
 .card {
   width: 25%;
   text-align: center;
+}
+.card-deck {
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
 }
 .error-text {
   color: var(--error);

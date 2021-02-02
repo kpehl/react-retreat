@@ -1,12 +1,8 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import logo from '../../assets/logo.png';
-=======
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
->>>>>>> develop
 
 function Nav() {
   const { data } = useQuery(QUERY_USER);
@@ -80,13 +76,8 @@ function Nav() {
       <div className="logo">
       
         <Link to="/">
-<<<<<<< HEAD
-        <img src={logo} alt="React Retreat"/>
-          
-=======
           <span role="img" aria-label="hotel building">🏨</span>
           React Retreat
->>>>>>> develop
         </Link>
         
 
