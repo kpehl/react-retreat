@@ -25,6 +25,7 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "web-vitals": "^1.1.0",
+    "infinite-react-carousel": "^1.2.11",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
     "workbox-cacheable-response": "^5.1.4",
