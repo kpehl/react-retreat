@@ -2,14 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { useQuery } from '@apollo/react-hooks';
-import { QUERY_USER, QUERY_ROOMS, QUERY_BOOKINGS } from "../utils/queries";
+import { QUERY_USER, QUERY_BOOKINGS } from "../utils/queries";
 
 
 function BookingHistory() {
   let user;
   let bookings;
-  let bookingIds;
-  
 
   const { data: userData } = useQuery(QUERY_USER);
   // console.log(userData)
@@ -18,7 +16,7 @@ function BookingHistory() {
     console.log('user data present');
     // console.log(userData);
     user = userData.user;
-    console.log(user)
+    // console.log(user)
   }
 
   const {data: bookingData } = useQuery(QUERY_BOOKINGS);
@@ -26,22 +24,10 @@ function BookingHistory() {
   if (bookingData) {
     console.log('booking data present')
     let bookingArray = bookingData.bookings;
+    // console.log(bookingArray)
     bookings = bookingArray.filter(booking => booking.user._id === user._id)
-    console.log(bookings)
-    // bookingIds = bookings.map(booking => booking._id)
-    // console.log(bookingIds)
+    // console.log(bookings)
   }
-
-  // const { data: roomData } = useQuery(QUERY_ROOMS);
-  
-  // if (roomData) {
-  //   console.log('room data present')
-  //   console.log(roomData)
-  //   let roomsArray = roomData.rooms;
-  //   console.log(roomsArray)
-  //   // let roomBookingsArray = roomsArray.filter(room => bookingIds.includes(room.bookings._id))
-  //   // console.log(roomBookingsArray)
-  // }
 
   return (
     <>
@@ -63,20 +49,18 @@ function BookingHistory() {
                     <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>  
                     <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
                   </div>
-                {/* <div className="flex-row">
-                  {booking.room.map(({ _id, name, price}, index) => (
-                    <div key={index} className="my-2">
-                      <Link to={`/rooms/${_id}`}>
-                        <p>{name}</p>
+                <div className="flex-row">
+                    <div key={booking.rooms._id} className="my-2">
+                      <Link to={`/rooms/${booking.rooms._id}`}>
+                        <p>{booking.rooms.name}</p>
                       </Link>
                       <div>
-                        <p><span>${price}</span></p>
+                        <p><span>${booking.rooms.price}</span></p>
                         <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>  
                         <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
                       </div>
                     </div>
-                  ))}
-                </div> */}
+                </div>
               </div>
             ))}
           </>

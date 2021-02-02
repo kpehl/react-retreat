@@ -28,7 +28,7 @@ const typeDefs = gql`
     bookingDateEnd: String
     confirmed: Boolean
     user: User
-    rooms: [Room]
+    rooms: Room
   }
 
   type User {

@@ -12,6 +12,11 @@ export const QUERY_BOOKINGS = gql`
       firstName
       lastName
       }
+    rooms {
+      _id
+      name
+      price
+      }
     }
   }
 `;

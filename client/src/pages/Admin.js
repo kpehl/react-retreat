@@ -19,7 +19,6 @@ function ReservationHistory() {
 
   if (bookingData) {
     bookingArray = bookingData.bookings;
-    // bookings = bookingArray.filter(booking => booking.user._id === user._id)
   }
 
   const [showDetails, setShowDetails] = useState(false);
@@ -46,11 +45,11 @@ function ReservationHistory() {
                 <p>
                   Email: {user.email}
                 </p>
-                {/* <p>
-                  Number of bookings: {user.bookings.length}
+                <p>
+                  Number of bookings: {(bookingArray.filter(booking => booking.user._id === user._id)).length}
                 </p>
                 <button id={user._id} key={user._id} onClick={(user) => clickHandler(user)}>Details</button>
-                { showDetails ? <SingleUserDetail bookings={user.bookings} /> : null} */}
+                { showDetails ? <SingleUserDetail bookings={(bookingArray.filter(booking => booking.user._id === user._id))} /> : null}
               </div>
             ))}
             <h2>Bookings</h2>
@@ -58,11 +57,11 @@ function ReservationHistory() {
               <div key={booking._id} className="my-2">
                 <h3>Confirmation Number: {booking._id}</h3>
                 <div className="card px-1 py-1" key={booking._id}>
-                <p>Guest: {booking.user.firstName} {booking.user.lastName}</p>
-                <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
-                {/* <p>Room: {booking.room.name}</p> */}
-                <p>Reservation Dates: <span>{new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>
-            </div>
+                  <p>Guest: {booking.user.firstName} {booking.user.lastName}</p>
+                  <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
+                  <p>Room: {booking.rooms.name}</p>
+                  <p>Reservation Dates: <span>{new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>
+                </div>
               </div>
             ))}
           </>
