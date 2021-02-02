@@ -36,17 +36,15 @@ db.once('open', async () => {
     {
       name: 'Double Queen',
       category: categories[1]._id,
-      description:
-        'Enjoy sweeping views of the Cauayan Island Bacuit Bay Beach and its surrounding mountains and landscape through floor windows in our City View Rooms. These rooms features two Queen beds, valet closet, seating and a desk. With large baths and stand-alone showers, bathrooms are encased with frosted glass panels.',
-      image: 'toilet-paper.jpg',
+      description:'Enjoy sweeping views of the Cauayan Island Bacuit Bay Beach and its surrounding mountains and landscape through floor windows in our City View Rooms. These rooms features two Queen beds, valet closet, seating and a desk. With large baths and stand-alone showers, bathrooms are encased with frosted glass panels.',
+      image: '/rooms/doubleQueen/room-5.jpeg',
       price: 179.99,
       quantity: 20
     },
     {
       name: 'Queen',
       category: categories[1]._id,
-      description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
+      description:'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
       image: 'soap.jpg',
       price: 139.99,
       quantity: 50
@@ -56,7 +54,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
+      image: '/rooms/full/room1.jpg',
       price: 99.99,
       quantity: 50
     }
