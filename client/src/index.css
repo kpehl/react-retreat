@@ -1,23 +1,9 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
+  --primary: #276678;
+  --secondary: #d3e0ea;
   --tertiary: #B12704;
-  --light: #fafafa;
-  --dark: #272f32;
+  --light: #f6f5f5;
+  --dark: #276678;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -85,16 +71,6 @@ header {
 header a {
   color: var(--light);
 }
-footer {
-  background-color: var(--primary);
-  color: var(--light);
-  width: 100%;
-  position: fixed;
-  bottom: 0; 
-}
-footer a {
-  color: aquamarine;
-}
 button {
   font-size: 1rem;
   text-decoration: none;
@@ -135,10 +111,13 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 .container {
-  width: 85%;
-  max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-size: contain ;
+}
+nav{
+  margin-left: 15%;
 }
 .flex-row {
   display: flex;
@@ -159,7 +138,7 @@ input:focus {
   margin-left: var(--spacing-two);
 }
 .my-1 {
-  margin-top: var(--spacing-one);
+  margin-top: 13%;
   margin-bottom: var(--spacing-one);
 }
 .my-2 {
@@ -183,7 +162,7 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 .card {
-  width: 25%;
+  width: 15%;
   text-align: center;
 }
 .error-text {
@@ -193,4 +172,26 @@ input:focus {
   .card {
     width: 100%;
   }
+} 
+
+
+.logo {
+  position: fixed;
+  top: 50px;
+  z-index: 2;
+  
 }
+
+.logo img {
+  height: 200px;
+  margin-top: -30px;
+}
+
+.carousel .slide img {
+  max-height: 100%;  /* change this to whatever you want */
+  width: 100%;
+}
+
+
+/* Message Damaris Campos, Kathleen (Cassie) Pehl, Michael Giddings */
+

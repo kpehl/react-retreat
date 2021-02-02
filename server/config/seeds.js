@@ -82,8 +82,8 @@ db.once('open', async () => {
     {
       name: 'Suite',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
+        'Featuring a plush bed and living space with extra seating, a sleeper sofa, and a TV that can be seen from every angle of the suite. Each studio suite includes a workstation, a wet bar, a refrigerator, and a microwave.',
+      image: 'imageExample.jpg',
       category: categories[0]._id,
       price: 299.99,
       quantity: 5,
@@ -92,7 +92,7 @@ db.once('open', async () => {
     {
       name: 'King',
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
+        'Our most spacious rooms, which offer striking views of the glittering Cauayan Island Bacuit Bay Beach through the windows, the React Retreat King Room offers a king-sized bed and seating area with armchairs, occasional tables and a desk. A large bathroom features a walk-in shower and bath, with an adjoining walk-in wardrobe and valet closet.',
       image: 'canned-coffee.jpg',
       category: categories[0]._id,
       price: 179.99,
@@ -105,17 +105,15 @@ db.once('open', async () => {
     {
       name: 'Double Queen',
       category: categories[1]._id,
-      description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
+      description:'Enjoy sweeping views of the Cauayan Island Bacuit Bay Beach and its surrounding mountains and landscape through floor windows in our City View Rooms. These rooms features two Queen beds, valet closet, seating and a desk. With large baths and stand-alone showers, bathrooms are encased with frosted glass panels.',
+      image: '/rooms/doubleQueen/room-5.jpeg',
       price: 179.99,
       quantity: 20
     },
     {
       name: 'Queen',
       category: categories[1]._id,
-      description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
+      description:'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
       image: 'soap.jpg',
       price: 139.99,
       quantity: 50
@@ -125,7 +123,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
+      image: '/rooms/full/room1.jpg',
       price: 99.99,
       quantity: 50,
       bookings: [bookings[3]._id]
