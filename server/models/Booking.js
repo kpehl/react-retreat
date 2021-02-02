@@ -18,12 +18,14 @@ const bookingSchema = new Schema({
     type: Boolean,
     default: false
   },
-  room: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Room'
-    }
-  ]
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  rooms: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Room'
+  }]
 });
 
 const Booking = mongoose.model('Booking', bookingSchema);
