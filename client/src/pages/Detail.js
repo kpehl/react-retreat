@@ -120,11 +120,6 @@ function Detail() {
               Remove from Booking
             </button>
           </p>
-
-          {/* <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          /> */}
           
         </div>
       ) : null}
