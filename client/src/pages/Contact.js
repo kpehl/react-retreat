@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, CardTitle, CardImg, CardBody, CardSubtitle, CardText, CardDeck } from 'reactstrap';
+import { Button, CardTitle, CardImg, CardBody, CardSubtitle, CardText } from 'reactstrap';
 
 const Contact = (props) => {
     return (
@@ -23,7 +23,7 @@ const Contact = (props) => {
                 </CardBody>
             </div>
             <div class="card px-2 py-2">
-                <CardImg top width="55%" src="/images/profile/damaris.JPG" alt="Card image cap" />
+                <CardImg top width="100%" src="/images/profile/damaris.jpeg" alt="Card image cap" />
                 <CardBody>
                     <CardTitle tag="h5">Damaris Campos</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">Resort Chief Marketing Officer</CardSubtitle>
