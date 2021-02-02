@@ -50,16 +50,18 @@ function BookingHistory() {
                     <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
                   </div>
                 <div className="flex-row">
-                    <div key={booking.rooms._id} className="my-2">
-                      <Link to={`/rooms/${booking.rooms._id}`}>
-                        <p>{booking.rooms.name}</p>
+                {booking.rooms.map(({ _id, name, price}, index) => (
+                    <div key={index} className="my-2">
+                      <Link to={`/rooms/${_id}`}>
+                        <p>{name}</p>
                       </Link>
                       <div>
-                        <p><span>${booking.rooms.price}</span></p>
+                        <p><span>${price}</span></p>
                         <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>  
                         <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
                       </div>
                     </div>
+                ))}
                 </div>
               </div>
             ))}

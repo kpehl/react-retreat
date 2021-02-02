@@ -22,10 +22,10 @@ const bookingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  rooms: {
+  rooms: [{
     type: Schema.Types.ObjectId,
     ref: 'Room'
-  }
+  }]
 });
 
 const Booking = mongoose.model('Booking', bookingSchema);
