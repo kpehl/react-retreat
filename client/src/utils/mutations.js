@@ -11,7 +11,7 @@ export const LOGIN = gql`
   }
 `;
 
-export const ADD_ORDER = gql`
+/* export const ADD_ORDER = gql`
   mutation addOrder($rooms: ID!) {
     addOrder(rooms: $rooms) {
       purchaseDate
@@ -31,7 +31,7 @@ export const ADD_ORDER = gql`
       }
     }
   }
-`; */
+`;  */
 
 export const ADD_ORDER = gql`
   mutation addOrder($rooms: ID!){

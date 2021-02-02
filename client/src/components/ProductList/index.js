@@ -67,6 +67,7 @@ function ProductList() {
                   name={room.name}
                   price={room.price}
                   quantity={room.quantity}
+                  bookings={room.bookings}
                 />
             ))}
         </div>

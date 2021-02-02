@@ -16,12 +16,20 @@ import { useDispatch, useSelector } from "react-redux";
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 function Reservation() {
-  const state = useSelector((state) => {
-    return state;
-  });
-  const dispatch = useDispatch();
+    const state = useSelector(state => state);
+    const dispatch = useDispatch();
 
+    console.log("state");
+    console.log(state);
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
 
   useEffect(() => {
     // async function to get data from IndexedDB
@@ -34,18 +42,6 @@ function Reservation() {
       getCart();
     }
   }, [state.cart.length, dispatch]);
-
-  useEffect(() => {
-    if (data) {
-      stripePromise.then((res) => {
-        res.redirectToCheckout({ sessionId: data.checkout.session });
-      });
-    }
-  }, [data]);
-
-  function formatDate(date){
-
-  }
 
   function calculateTotal() {
     let sum = 0;
@@ -60,7 +56,6 @@ function Reservation() {
 
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
-          console.log(item);
         productIds.push(item._id);
       }
       console.log(productIds);

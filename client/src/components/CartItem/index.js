@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useQuery } from '@apollo/react-hooks';
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
@@ -11,7 +12,8 @@ import { useDispatch } from "react-redux";
 import { enUS } from 'date-fns/locale'
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates'
 import 'react-nice-dates/build/style.css'
-import { Booking } from "../../../../server/models";
+import { QUERY_USER } from "../../utils/queries";
+
 
 
 
@@ -27,8 +29,33 @@ const CartItem = ({ item }) => {
 
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
-  
 
+    const { data } = useQuery(QUERY_USER);
+    let user;
+    
+    if(data){
+        user = data.user;
+    }
+  
+useEffect(() => {
+    if(startDate && endDate){
+        console.log(formatDate(new Date()));        
+        /* create new booking object here and add to room */
+        dispatch({
+            type: UPDATE_RESERVATION_DATES,
+            _id: item._id,
+            bookings: {
+                purchaseDate: formatDate(new Date()),
+                bookingDateStart: formatDate(startDate),
+                bookingDateEnd: formatDate(endDate),
+                user: user,
+                room: item,
+                } 
+          });
+          //idbPromise("cart", "put", { ...item, bookings: parseInt(value) });
+    }
+
+},[startDate, endDate]);
 
   const removeFromCart = (item) => {
     dispatch({
@@ -57,19 +84,12 @@ const CartItem = ({ item }) => {
     }
   };
 
-  const onDateChange = (startDate, endDate) => {
-/*     if(startDate){
-        dispatch({
-            type: UPDATE_RESERVATION_DATES,
-            _id: item._id,
-            bookingDateStart: startDate,
-            bookingDateEnd: endDate,
-        });
-        idbPromise("cart","put",{...item, bookingDateStart: startDate, bookingDateEnd: endDate });
-    } */
-    
-    console.log(item);
-  };
+  function formatDate(d){
+      let year = d.getFullYear();
+      let month = d.getMonth();
+      let day = d.getDate();
+      return month + '/' + day + '/' + year
+  }
 
 
   return (
@@ -108,7 +128,6 @@ const CartItem = ({ item }) => {
       minimumLength={1}
       format='dd MMM yyyy'
       locale={enUS}
-     /*  onChange={onDateChange(startDate, endDate)} */
     >
       {({ startDateInputProps, endDateInputProps, focus }) => (
         <div className='date-range'>

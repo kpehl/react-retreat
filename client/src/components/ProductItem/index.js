@@ -13,10 +13,9 @@ function ProductItem(item) {
     image,
     name,
     _id,
-    bookingDateStart,
-    bookingDateEnd,
     price,
-    quantity
+    quantity,
+    bookings,
   } = item;
 
   const state = useSelector((state) => {
