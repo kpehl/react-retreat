@@ -12,6 +12,7 @@ import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
 import Contact from "./pages/Contact";
 import BookingHistory from "./pages/BookingHistory";
+import Reservation from "./pages/Reservation";
 import Success from "./pages/Success";
 import Footer from "./components/Footer";
 
@@ -41,6 +42,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/bookingHistory" component={BookingHistory} />
+              <Route exact path="/reservation" component={Reservation} />
               <Route exact path="/rooms/:id" component={Detail} />
               <Route exact path="/success" component={Success} />
               <Route exact path="/admin" component={Admin} />

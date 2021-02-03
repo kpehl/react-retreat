@@ -46,7 +46,6 @@ function ProductList() {
   }, [data, loading, dispatch]);
 
   function filterRooms() {
-    console.log("FILTER");
     if (!currentCategory) {
       return state.rooms;
     }
@@ -67,6 +66,7 @@ function ProductList() {
                   name={room.name}
                   price={room.price}
                   quantity={room.quantity}
+                  bookings={room.bookings}
                 />
             ))}
         </div>
