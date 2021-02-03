@@ -6,11 +6,11 @@ import { QUERY_USER } from "../../utils/queries";
 
 function Nav() {
   const { data } = useQuery(QUERY_USER);
-  let user;
+  // let user;
   let admin;
   console.log(data)
   if (data) {
-    user = data.user;
+    // user = data.user;
     admin = data.user.admin;
   }
  
@@ -29,6 +29,11 @@ function Nav() {
               Logout
             </a>
           </li>
+          <li className="mx-1">
+            <Link to="/contact">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       );
     } else if (Auth.loggedIn() && admin) {
@@ -44,6 +49,11 @@ function Nav() {
             <a href="/" onClick={() => Auth.logout()}>
               Logout
             </a>
+          </li>
+          <li className="mx-1">
+            <Link to="/contact">
+              Contact Us
+            </Link>
           </li>
         </ul>
       )
