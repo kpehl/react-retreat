@@ -29,6 +29,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       );
     } else if (Auth.loggedIn() && admin) {
@@ -45,6 +48,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       )
     } else {
