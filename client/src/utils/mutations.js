@@ -11,28 +11,6 @@ export const LOGIN = gql`
   }
 `;
 
-/* export const ADD_ORDER = gql`
-  mutation addOrder($rooms: ID!) {
-    addOrder(rooms: $rooms) {
-      purchaseDate
-      bookingDateStart
-      bookingDuration
-      bookings {
-        room {
-          _id
-          name
-          description
-          price
-          quantity
-          category {
-            name
-          } 
-        }
-      }
-    }
-  }
-`;  */
-
 export const ADD_ORDER = gql`
   mutation addOrder($rooms: ID!){
     addOrder(rooms: $rooms) {

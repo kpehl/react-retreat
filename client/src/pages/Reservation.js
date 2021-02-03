@@ -52,17 +52,33 @@ function Reservation() {
   }
 
   function submitCheckout() {
-    const productIds = [];
+      console.log("IN CHECKOUT");
+    let roomId ;
+    const currentBookings = [];
+    let duration, room;
 
     state.cart.forEach((item) => {
-      for (let i = 0; i < item.purchaseQuantity; i++) {
-        productIds.push(item._id);
-      }
-      console.log(productIds);
+        let bookingsNumber = item.bookings.length;
+        let newstart = new Date(item.bookings[bookingsNumber -1].bookingDateStart);
+        let newEnd = new Date(item.bookings[bookingsNumber -1].bookingDateEnd);
+        
+        var res = Math.abs(newEnd - newstart) / 1000;
+        duration = Math.floor(res / 86400);
+        roomId = item._id;
+        room = item;
+      /* for (let i = 0; i < item.purchaseQuantity; i++) {
+        roomIds.push(item._id);
+      } */
     });
-
+    console.log('roomId');
+    console.log(roomId);
+    console.log('room');
+    console.log(room);
     getCheckout({
-      variables: { products: productIds }
+      variables: { 
+          _id: roomId,
+          duration: duration,
+        }
     });
   }
 

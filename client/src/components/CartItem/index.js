@@ -52,7 +52,7 @@ useEffect(() => {
                 room: item,
                 } 
           });
-          //idbPromise("cart", "put", { ...item, bookings: parseInt(value) });
+          idbPromise("cart", "put", { ...item, bookings: item.bookings });
     }
 
 },[startDate, endDate]);
