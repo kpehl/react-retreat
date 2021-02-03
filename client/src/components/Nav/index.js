@@ -29,6 +29,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       );
     } else if (Auth.loggedIn() && admin) {
@@ -45,6 +48,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       )
     } else {
@@ -60,6 +66,11 @@ function Nav() {
               Login
             </Link>
           </li>
+          <li className="mx-1">
+            <Link to="/contact">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       );
     }
@@ -67,12 +78,18 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <h1>
+
+      <div className="logo">
+      
         <Link to="/">
-          <span role="img" aria-label="hotel building">🏨</span>
+          <span role="img" aria-label="hotel building"></span>
           React Retreat
         </Link>
-      </h1>
+        
+
+      </div>
+     
+     
 
       <nav>
         {showNavigation()}
