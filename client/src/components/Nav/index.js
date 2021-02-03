@@ -83,7 +83,7 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
+    <header className="flex-row px-1 space-between">
       <h1>
         <Link to="/">
           <img src="logo512.png" alt="react retreat logo" />
