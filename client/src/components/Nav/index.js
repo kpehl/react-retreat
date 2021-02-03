@@ -9,7 +9,6 @@ function Nav() {
   const { data } = useQuery(QUERY_USER);
   let user;
   let admin;
-  console.log(data)
   if (data) {
     user = data.user;
     admin = data.user.admin;
@@ -30,6 +29,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       );
     } else if (Auth.loggedIn() && admin) {
@@ -46,6 +48,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       )
     } else {
@@ -59,6 +64,11 @@ function Nav() {
           <li className="mx-1">
             <Link to="/login">
               Login
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/contact">
+              Contact Us
             </Link>
           </li>
         </ul>
