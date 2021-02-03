@@ -86,7 +86,7 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          React Retreat
+          <img src="logo512.png" alt="react retreat logo" />
         </Link>
       </h1>
 
