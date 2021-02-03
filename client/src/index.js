@@ -7,6 +7,9 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './utils/store';
 
+// import Slider from './components/Carousel/slider'
+// import images from './images'
+
 
 ReactDOM.render(
   <React.StrictMode>

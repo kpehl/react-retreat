@@ -46,7 +46,6 @@ function ProductList() {
   }, [data, loading, dispatch]);
 
   function filterRooms() {
-    console.log("FILTER");
     if (!currentCategory) {
       return state.rooms;
     }

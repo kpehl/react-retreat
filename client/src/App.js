@@ -10,10 +10,13 @@ import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
+import Contact from "./pages/Contact";
 import BookingHistory from "./pages/BookingHistory";
 import Reservation from "./pages/Reservation";
 import Success from "./pages/Success";
 import Footer from "./components/Footer";
+
+
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -33,6 +36,7 @@ function App() {
       <Router>
         <div>
             <Nav />
+            
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
@@ -42,10 +46,12 @@ function App() {
               <Route exact path="/rooms/:id" component={Detail} />
               <Route exact path="/success" component={Success} />
               <Route exact path="/admin" component={Admin} />
+              <Route exact path="/contact" component={Contact} />
               <Route component={NoMatch} />
             </Switch>
             <Footer />
         </div>
+      
       </Router>
     </ApolloProvider>
 

@@ -13,6 +13,9 @@ import { idbPromise } from "../utils/helpers";
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import CustomSlider from "../components/MainSlider";
+
+
 function Detail() {
   const state = useSelector((state) => {
     return state;
@@ -96,6 +99,8 @@ function Detail() {
             ← Back to Rooms
           </Link>
 
+          <CustomSlider room={currentProduct.name}/>
+
           <h2>{currentProduct.name}</h2>
 
           <p>
@@ -107,20 +112,21 @@ function Detail() {
             ${currentProduct.price}
             {" "}
             <button onClick={addToCart}>
-              Add to Cart
+              Reserve
             </button>
             <button 
               disabled={!cart.find(p => p._id === currentProduct._id)} 
               onClick={removeFromCart}
             >
-              Remove from Cart
+              Remove from Booking
             </button>
           </p>
 
-          <img
+          {/* <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
-          />
+          /> */}
+          
         </div>
       ) : null}
       {

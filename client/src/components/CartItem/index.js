@@ -39,7 +39,6 @@ const CartItem = ({ item }) => {
   
 useEffect(() => {
     if(startDate && endDate){
-        console.log(formatDate(new Date()));        
         /* create new booking object here and add to room */
         dispatch({
             type: UPDATE_RESERVATION_DATES,

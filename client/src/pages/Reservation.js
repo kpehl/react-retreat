@@ -19,8 +19,6 @@ function Reservation() {
     const state = useSelector(state => state);
     const dispatch = useDispatch();
 
-    console.log("state");
-    console.log(state);
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   useEffect(() => {
@@ -52,7 +50,6 @@ function Reservation() {
   }
 
   function submitCheckout() {
-      console.log("IN CHECKOUT");
     let roomId ;
     const currentBookings = [];
     let duration, room;
@@ -66,14 +63,8 @@ function Reservation() {
         duration = Math.floor(res / 86400);
         roomId = item._id;
         room = item;
-      /* for (let i = 0; i < item.purchaseQuantity; i++) {
-        roomIds.push(item._id);
-      } */
     });
-    console.log('roomId');
-    console.log(roomId);
-    console.log('room');
-    console.log(room);
+ 
     getCheckout({
       variables: { 
           _id: roomId,

@@ -69,9 +69,6 @@ const resolvers = {
         .populate('rooms')
     },
     checkout: async (parent, { _id, duration}, context) => {
-      console.log("in checkout");
-      console.log(_id);
-      console.log(duration);
     
       const currentRoom = await Room.find({_id}, function(err, docs){
         if(!err){
@@ -80,11 +77,6 @@ const resolvers = {
           throw err;
         }
       });
-
-      console.log('currentRoom');
-      console.log(currentRoom);
-
-        //const order = new Order({ room: currentRoom, booking: currentRoom.bookings[currentRoom.bookings.length - 1] });
 
     const line_items = [];
       const url = new URL(context.headers.referer).origin;
