@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.png';
+import logo from '../../assets/reactRetreat.png';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
 

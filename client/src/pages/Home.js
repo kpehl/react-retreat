@@ -11,9 +11,7 @@ const Home = () => {
     <div className="container">
       <CustomSlider/>
       <CategoryMenu />
-      <ProductList />
-      {/* <Cart /> */}
-      
+      <ProductList />      
     </div>
   );
 };

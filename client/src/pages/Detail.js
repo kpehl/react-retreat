@@ -90,6 +90,8 @@ function Detail() {
     idbPromise('cart', 'delete', { ...currentProduct })
   };
 
+  console.log(currentProduct)
+
   return (
     <>
       {currentProduct ? (
@@ -97,6 +99,7 @@ function Detail() {
           <Link to="/">
             ← Back to Rooms
           </Link>
+
 
           <CustomSlider room={currentProduct.name}/>
 

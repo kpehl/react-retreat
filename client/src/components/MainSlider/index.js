@@ -5,20 +5,23 @@ import Slider from 'infinite-react-carousel';
 
 export default class CustomSlider extends Component {
   render() {
-    const { props } = this.props
+    // const { name, ...props } = this.props
+    console.log("slider")
+    console.log(this.props)
     const settings = {
       arrows: false,
       autoplay: true,
       duration: 300
     };
-    switch (true) {
+    switch (this.props) {
       //
       case 'King':
         return (
           <div className="carousel">
+ 
             <Slider {...settings}>
               <div className="slide">
-                <img src="/images/hotel/image5.jpg" alt="Beach" />
+                <img src="/images/hotel/image1.jpg" alt="Beach" />
               </div>
               <div className="slide">
                 <img src="/images/hotel/image2.jpg" alt="Beach" />
@@ -35,7 +38,6 @@ export default class CustomSlider extends Component {
             </Slider>
           </div>
         );
-        break;
       //
       default:
         return (
@@ -60,7 +62,6 @@ export default class CustomSlider extends Component {
             </Slider>
           </div>
         );
-        break;
         
     }
   }

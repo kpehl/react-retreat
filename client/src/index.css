@@ -162,8 +162,10 @@ nav{
   padding-bottom: var(--spacing-two);
 }
 .card {
-  width: 15%;
+  width: 30%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .error-text {
   color: var(--error);
