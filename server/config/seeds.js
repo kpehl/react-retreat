@@ -83,7 +83,7 @@ db.once('open', async () => {
       name: 'Suite',
       description:
         'Featuring a plush bed and living space with extra seating, a sleeper sofa, and a TV that can be seen from every angle of the suite. Each studio suite includes a workstation, a wet bar, a refrigerator, and a microwave.',
-      image: '/rooms/suite/room1.jpg',
+      image: '/rooms/suite/collage.png',
       category: categories[0]._id,
       price: 299.99,
       quantity: 5,
@@ -93,8 +93,7 @@ db.once('open', async () => {
       name: 'King',
       description:
         'Our most spacious rooms, which offer striking views of the glittering Cauayan Island Bacuit Bay Beach through the windows, the React Retreat King Room offers a king-sized bed and seating area with armchairs, occasional tables and a desk. A large bathroom features a walk-in shower and bath, with an adjoining walk-in wardrobe and valet closet.',
-      image: '/rooms/queen/room4.jpeg',
-      image:'/rooms/queen/collageQueen.png',
+      image: '/rooms/king/collage.png',
       category: categories[0]._id,
       price: 179.99,
       quantity: 15,
@@ -115,7 +114,7 @@ db.once('open', async () => {
       name: 'Queen',
       category: categories[1]._id,
       description:'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: '/rooms/queen/room4.jpeg',
+      image: '/rooms/queen/collage.png',
       price: 139.99,
       quantity: 50
     },
