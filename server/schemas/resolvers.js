@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Room, Category, Booking } = require('../models');
+const { isValidObjectId } = require('mongoose');
+const { User, Room, Category, Booking, Order } = require('../models');
 const { populate } = require('../models/User');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');  // using a test key from Stripe; in Production this would be process.env.STRIPE_KEY
@@ -67,23 +68,31 @@ const resolvers = {
         .populate('user')
         .populate('rooms')
     },
-    checkout: async (parent, args, context) => {
-      const booking = new Booking({ Rooms: args.Rooms });
-      const { rooms } = await booking.populate('rooms').execPopulate();
-      const line_items = [];
+    checkout: async (parent, { _id, duration}, context) => {
+    
+      const currentRoom = await Room.find({_id}, function(err, docs){
+        if(!err){
+          return(docs);
+        } else {
+          throw err;
+        }
+      });
+
+    const line_items = [];
       const url = new URL(context.headers.referer).origin;
 
-      for (let i = 0; i < rooms.length; i++) {
+      for (let i = 0; i < currentRoom.length; i++) {
         // generate room id with Stripe
-        const room = await stripe.rooms.create({
-          name: rooms[i].name,
-          description: rooms[i].description,
-          images: [`${url}/images/${rooms[i].image}`]
+        const room = await stripe.products.create({
+          name: currentRoom[i].name,
+          description: currentRoom[i].description,
+          images: [`${url}/images/${currentRoom[i].image}`]
         });
         // generate price id using the Room id
         const price = await stripe.prices.create({
-          room: room.id,
-          unit_amount: rooms[i].price * 100,
+          product: room.id,
+          //unit_amount: rooms[i].price * 100,
+          unit_amount: (duration * currentRoom[i].price) *100,
           currency: 'usd'
         });
         // add price id to the line items array
@@ -116,7 +125,8 @@ const resolvers = {
       console.log(context);
       if (context.user) {
         const booking = new Booking({ Rooms });
-
+        console.log('booking in resolver');
+        console.log(booking);
         await User.findByIdAndUpdate(context.user._id, { $push: { bookings: booking } });
 
         return booking;

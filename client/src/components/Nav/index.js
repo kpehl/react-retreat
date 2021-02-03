@@ -6,10 +6,8 @@ import { QUERY_USER } from "../../utils/queries";
 
 function Nav() {
   const { data } = useQuery(QUERY_USER);
-  // let user;
-  let admin;
   let user;
-  console.log(data)
+  let admin;
   if (data) {
     user = data.user;
     admin = data.user.admin;
