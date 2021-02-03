@@ -1,25 +1,4 @@
-<<<<<<< HEAD
-:root {
-  --primary: #276678;
-  --secondary: #d3e0ea;
-  --tertiary: #B12704;
-  --light: #f6f5f5;
-  --dark: #276678;
-  --error: rgb(228, 46, 1);
-  --spacing-one: calc(1rem * 0.5);
-  --spacing-two: calc(1rem);
-}
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  min-height: 100%;
-}
-body {
-=======
 /* body {
->>>>>>> develop
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
@@ -179,33 +158,17 @@ nav{
 } 
 
 
-<<<<<<< HEAD
-.logo {
-  position: fixed;
-  top: 50px;
-  z-index: 2;
-  
-}
-
-.logo img {
-  height: 200px;
-  margin-top: -30px;
-}
-
-.carousel .slide img {
-  max-height: 100%;  /* change this to whatever you want */
-=======
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
 
 :root {
-  --primary: #3a4d64;
-  --secondary: #03941b;
-  --tertiary: #3606b9;
-  --light: #fafafa;
-  --dark: #436a79;
+  --primary: #516174;
+  --secondary: #0d9656;
+  --tertiary: #361e75;
+  --light: #f5f8f5;
+  --dark: #334249;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -216,6 +179,7 @@ code {
 html,
 body {
   min-height: 100%;
+  background-color: rgb(219, 224, 224);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
@@ -272,19 +236,14 @@ header {
 }
 header a {
   color: var(--light);
+  font-size:x-large;
+  
 }
 footer {
   background-color: var(--primary);
   color: var(--light);
->>>>>>> develop
   width: 100%;
 }
-<<<<<<< HEAD
-
-
-/* Message Damaris Campos, Kathleen (Cassie) Pehl, Michael Giddings */
-
-=======
 button {
   font-size: 1rem;
   text-decoration: none;
@@ -388,4 +347,3 @@ input:focus {
     width: 100%;
   }
 }
->>>>>>> develop
