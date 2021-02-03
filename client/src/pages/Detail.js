@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 
 import { QUERY_ROOMS } from "../utils/queries";
@@ -22,7 +22,7 @@ function Detail() {
   });
   const dispatch = useDispatch();
   const { id } = useParams();
-  
+  const history = useHistory();
   const [currentProduct, setCurrentProduct] = useState({})
   
   const { loading, data } = useQuery(QUERY_ROOMS);
@@ -78,6 +78,7 @@ function Detail() {
       // and also store in IndexedDB
       idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
     }
+    history.push('/reservation');
   };
 
   const removeFromCart = () => {
@@ -126,7 +127,7 @@ function Detail() {
       {
         loading ? <img src={spinner} alt="loading" /> : null
       }
-      <Cart />
+
     </>
   );
 };

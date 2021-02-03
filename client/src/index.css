@@ -1,10 +1,8 @@
 :root {
-  --primary: #276678;
-  --secondary: #d3e0ea;
-  --tertiary: #B12704;
-  --light: #f6f5f5;
-  --dark: #276678;
-  --error: rgb(228, 46, 1);
+  --light:#1687a7;
+  --secondary:#f6f5f5;
+  --dark:#276678;
+  --error:rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
 }
@@ -14,11 +12,13 @@
 html,
 body {
   min-height: 100%;
+  background-color:whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Karla', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -30,7 +30,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -58,7 +57,7 @@ p {
   margin-top: 0;
 }
 a {
-  color: var(--tertiary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: bold;
 }
@@ -66,10 +65,20 @@ a:hover {
   text-decoration: underline;
 }
 header {
-  background: var(--primary);
+  background: var(--light);
 }
 header a {
-  color: var(--light);
+  color: var(--secondary);
+  font-size:x-large;
+  
+}
+footer {
+  background-color: var(--light);
+  /* color: var(--secondary); */
+  width: 100%;
+}
+.footer {
+  color: var(--secondary);
 }
 button {
   font-size: 1rem;
@@ -80,7 +89,8 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  color: var(--secondary);
+  background-color: var(--light);
 }
 button:hover {
   opacity: .8;
@@ -107,17 +117,14 @@ input {
   transition: box-shadow 0.2s;
 }
 input:focus {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--light);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 .container {
-  width: 100%;
+  width: 85%;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background-size: contain ;
-}
-nav{
-  margin-left: 15%;
 }
 .flex-row {
   display: flex;
@@ -138,7 +145,7 @@ nav{
   margin-left: var(--spacing-two);
 }
 .my-1 {
-  margin-top: 13%;
+  margin-top: var(--spacing-one);
   margin-bottom: var(--spacing-one);
 }
 .my-2 {
@@ -162,8 +169,42 @@ nav{
   padding-bottom: var(--spacing-two);
 }
 .card {
-  width: 15%;
+  width: 100%;
   text-align: center;
+  border-color: #276678;
+}
+.card-contact {
+  width: 25%;
+  text-align: center;
+  border-color: #276678;
+}
+.card-deck {
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
+}
+.card-main {
+  width: 100%;
+  text-align: center;
+}
+.card-admin {
+  width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    background-color: var(--light);
+    color: var(--secondary);
+}
+.admin-btn {
+  background-color: var(--dark);
+}
+.mb-3 {
+  margin-bottom: 1rem!important;
+}
+.link {
+  text-align: left;
 }
 .error-text {
   color: var(--error);
@@ -172,26 +213,4 @@ nav{
   .card {
     width: 100%;
   }
-} 
-
-
-.logo {
-  position: fixed;
-  top: 50px;
-  z-index: 2;
-  
 }
-
-.logo img {
-  height: 200px;
-  margin-top: -30px;
-}
-
-.carousel .slide img {
-  max-height: 100%;  /* change this to whatever you want */
-  width: 100%;
-}
-
-
-/* Message Damaris Campos, Kathleen (Cassie) Pehl, Michael Giddings */
-

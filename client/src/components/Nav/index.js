@@ -1,7 +1,6 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.png';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
 
@@ -9,7 +8,6 @@ function Nav() {
   const { data } = useQuery(QUERY_USER);
   let user;
   let admin;
-  console.log(data)
   if (data) {
     user = data.user;
     admin = data.user.admin;
@@ -30,6 +28,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       );
     } else if (Auth.loggedIn() && admin) {
@@ -46,6 +47,9 @@ function Nav() {
               Logout
             </a>
           </li>
+          <Link to="/contact">
+              Contact Us
+            </Link>
         </ul>
       )
     } else {
@@ -61,6 +65,11 @@ function Nav() {
               Login
             </Link>
           </li>
+          <li className="mx-1">
+            <Link to="/contact">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       );
     }
@@ -72,7 +81,8 @@ function Nav() {
       <div className="logo">
       
         <Link to="/">
-        <img src={logo} alt="React Retreat"/>  
+          <span role="img" aria-label="hotel building"></span>
+          React Retreat
         </Link>
         
 
