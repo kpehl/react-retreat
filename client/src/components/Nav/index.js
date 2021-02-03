@@ -8,7 +8,6 @@ function Nav() {
   const { data } = useQuery(QUERY_USER);
   let user;
   let admin;
-  console.log(data)
   if (data) {
     user = data.user;
     admin = data.user.admin;

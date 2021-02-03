@@ -1,10 +1,8 @@
 import React from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
+import CustomSlider from "../components/MainSlider"
 // import Cart from "../components/Cart";
-
-
-import CustomSlider from "../components/MainSlider";
 
 const Home = () => {
   return (
