@@ -4,7 +4,7 @@ import { Button, CardTitle, CardImg, CardBody, CardSubtitle, CardText } from 're
 const Contact = (props) => {
     return (
         <div class= "card-deck flex-row">
-            <div class="card px-2 py-2">
+            <div class="card-contact px-2 py-2">
                 <CardImg top width="100%" src="/images/profile/cassie.jpeg" alt="Card image cap" />
                 <CardBody>
                     <CardTitle tag="h5">Kathleen Pehl</CardTitle>
@@ -13,7 +13,7 @@ const Contact = (props) => {
                     <Button href="https://github.com/kpehl">Contact Kathleen</Button>
                 </CardBody>
             </div>
-            <div class="card px-2 py-2">
+            <div class="card-contact px-2 py-2">
                 <CardImg top width="100%" src="/images/profile/michael.jpeg" alt="Card image cap" />
                 <CardBody>
                     <CardTitle tag="h5">Michael Giddings</CardTitle>
@@ -22,7 +22,7 @@ const Contact = (props) => {
                     <Button href="https://github.com/fondofhats">Contact Michael</Button>
                 </CardBody>
             </div>
-            <div class="card px-2 py-2">
+            <div class="card-contact px-2 py-2">
                 <CardImg top width="100%" src="/images/profile/damaris.jpeg" alt="Card image cap" />
                 <CardBody>
                     <CardTitle tag="h5">Damaris Campos</CardTitle>
@@ -31,7 +31,7 @@ const Contact = (props) => {
                     <Button href="https://github.com/DCampos07">Contact Damaris</Button>
                 </CardBody>
             </div>
-            <div class="card px-2 py-2">
+            <div class="card-contact px-2 py-2">
                 <CardImg top width="100%" src="/images/profile/cristian.png" alt="Card image cap" />
                 <CardBody>
                     <CardTitle tag="h5">Cristian Acevedo</CardTitle>
