@@ -82,19 +82,13 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-
       <div className="logo">
-      
         <Link to="/">
-          <span role="img" aria-label="hotel building">🏨</span>
+          <span role="img" aria-label="hotel building"></span>
           React Retreat
         </Link>
-        
-
       </div>
      
-     
-
       <nav>
         {showNavigation()}
       </nav>

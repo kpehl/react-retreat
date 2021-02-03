@@ -18,7 +18,7 @@ const Contact = (props) => {
                 <CardBody>
                     <CardTitle tag="h5">Michael Giddings</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">Resort Chief Financial Officer</CardSubtitle>
-                    <CardText>Michael oversees all the financial aspects of our relaxing resort.  Every penny that comes in and out will be looked at by him meticulously.</CardText>
+                    <CardText>Michael oversees all the financial aspects of our relaxing resort.  Every penny that comes in and out of our resort will be looked at by Michael meticulously. He is in charge of control and order.</CardText>
                     <Button href="https://github.com/fondofhats">Contact Michael</Button>
                 </CardBody>
             </div>
@@ -27,7 +27,7 @@ const Contact = (props) => {
                 <CardBody>
                     <CardTitle tag="h5">Damaris Campos</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">Resort Chief Marketing Officer</CardSubtitle>
-                    <CardText>Damaris is responsible for sales growth and marketing strategies. She works on the sales generation, cost reduction, and risk mitigation aspect of the business.</CardText>
+                    <CardText>Damaris is responsible for sales growth and marketing strategies. Damaris works on the sales generation, cost reduction, and risk mitigation aspect of the business. She is in charge of making the bookings happen.</CardText>
                     <Button href="https://github.com/DCampos07">Contact Damaris</Button>
                 </CardBody>
             </div>

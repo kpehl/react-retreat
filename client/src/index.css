@@ -52,7 +52,7 @@ header {
   background: var(--primary);
 }
 header a {
-  color: var(--light);
+  color: var(--tertiary);
 }
 button {
   font-size: 1rem;
@@ -63,7 +63,7 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 button:hover {
   opacity: .8;
@@ -90,7 +90,7 @@ input {
   transition: box-shadow 0.2s;
 }
 input:focus {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 .container {
@@ -121,7 +121,7 @@ nav{
   margin-left: var(--spacing-two);
 }
 .my-1 {
-  margin-top: var(--spacing-one);
+  margin-top: 13%;
   margin-bottom: var(--spacing-one);
 }
 .my-2 {
@@ -164,12 +164,10 @@ code {
 } */
 
 :root {
-  --primary: #3a4d64;
-  --secondary: #03941b;
-  --tertiary: #3606b9;
-  --light: #fafafa;
-  --dark: #436a79;
-  --error: rgb(228, 46, 1);
+  --primary:#1687a7;
+  --tertiary:#f6f5f5;
+  --dark:#276678;
+  --error:rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
 }
@@ -179,6 +177,7 @@ code {
 html,
 body {
   min-height: 100%;
+  background-color: rgb(219, 224, 224);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
@@ -223,7 +222,7 @@ p {
   margin-top: 0;
 }
 a {
-  color: var(--tertiary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: bold;
 }
@@ -234,17 +233,17 @@ header {
   background: var(--primary);
 }
 header a {
-  color: var(--light);
+  color: var(--tertiary);
+  font-size:x-large;
+  
 }
 footer {
   background-color: var(--primary);
-  color: var(--light);
+  /* color: var(--tertiary); */
   width: 100%;
-  position: fixed;
-  bottom: 0; 
 }
-footer a {
-  color: aquamarine;
+.footer {
+  color: var(--tertiary);
 }
 button {
   font-size: 1rem;
@@ -255,7 +254,8 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  color: var(--tertiary);
+  background-color: var(--primary);
 }
 button:hover {
   opacity: .8;
@@ -282,7 +282,7 @@ input {
   transition: box-shadow 0.2s;
 }
 input:focus {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 .container {
