@@ -1,7 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-import logo from '../../assets/reactRetreat.png';
+import logo from '../../assets/React-Retreat logo.png';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
 
@@ -70,10 +70,16 @@ function Nav() {
     <header className="flex-row px-1">
 
       <div className="logo">
-      
-        <Link to="/">
-        <img src={logo} alt="React Retreat"/>  
+
+      <Link to="/">
+        <img src={logo} alt="React Retreat"/> 
+          <span role="img" aria-label="hotel building"></span>
+          React Retreat
         </Link>
+      
+        {/* <Link to="/">
+        <img src={logo} alt="React Retreat"/>  
+        </Link> */}
         
 
       </div>

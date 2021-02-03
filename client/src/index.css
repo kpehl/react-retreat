@@ -1,9 +1,9 @@
 :root {
-  --primary: #276678;
+  --primary: #1687a7;
   --secondary: #d3e0ea;
   --tertiary: #B12704;
   --light: #f6f5f5;
-  --dark: #276678;
+  --dark: #1687a7;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -92,6 +92,9 @@ button[disabled] {
 img {
   max-width: 100%;
 }
+.collage{
+  max-width: 60%;
+}
 span[role="img"] {
   cursor: default;
 }
@@ -178,15 +181,16 @@ nav{
 
 
 .logo {
-  position: fixed;
+  position: sticky;
   top: 50px;
   z-index: 2;
+  /* background-color: #f6f5f5; */
   
 }
 
 .logo img {
-  height: 200px;
-  margin-top: -30px;
+  height: 50px;
+  /* margin-top: -30px; */
 }
 
 .carousel .slide img {

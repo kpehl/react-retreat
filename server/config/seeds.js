@@ -94,6 +94,7 @@ db.once('open', async () => {
       description:
         'Our most spacious rooms, which offer striking views of the glittering Cauayan Island Bacuit Bay Beach through the windows, the React Retreat King Room offers a king-sized bed and seating area with armchairs, occasional tables and a desk. A large bathroom features a walk-in shower and bath, with an adjoining walk-in wardrobe and valet closet.',
       image: '/rooms/queen/room4.jpeg',
+      image:'/rooms/queen/collageQueen.png',
       category: categories[0]._id,
       price: 179.99,
       quantity: 15,

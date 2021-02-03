@@ -18,7 +18,7 @@ export default class CustomSlider extends Component {
       case 'King':
         return (
           <div className="carousel">
- 
+            
             <Slider {...settings}>
               <div className="slide">
                 <img src="/images/hotel/image1.jpg" alt="Beach" />

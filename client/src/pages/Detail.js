@@ -13,7 +13,7 @@ import { idbPromise } from "../utils/helpers";
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import CustomSlider from "../components/MainSlider";
+// import CustomSlider from "../components/MainSlider";
 
 
 function Detail() {
@@ -101,7 +101,7 @@ function Detail() {
           </Link>
 
 
-          <CustomSlider room={currentProduct.name}/>
+          {/* <CustomSlider room={currentProduct.name}/> */}
 
           <h2>{currentProduct.name}</h2>
 
@@ -124,10 +124,10 @@ function Detail() {
             </button>
           </p>
 
-          {/* <img
+          <img className="collage"
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
-          /> */}
+          />
           
         </div>
       ) : null}
