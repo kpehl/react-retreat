@@ -235,7 +235,10 @@ header {
 header a {
   color: var(--tertiary);
   font-size:x-large;
-  
+}
+header li {
+  text-decoration: none;
+  list-style: none;
 }
 footer {
   background-color: var(--primary);

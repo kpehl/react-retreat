@@ -8,11 +8,15 @@ function Nav() {
   const { data } = useQuery(QUERY_USER);
   // let user;
   let admin;
+  let user;
   console.log(data)
   if (data) {
-    // user = data.user;
+    user = data.user;
     admin = data.user.admin;
   }
+  if (Auth.loggedIn() && user === null) {
+    Auth.logout()
+  };
  
   function showNavigation() {
      if (Auth.loggedIn() && !admin) {
@@ -82,13 +86,12 @@ function Nav() {
 
   return (
     <header className="flex-row px-1">
-      <div className="logo">
+      <h1>
         <Link to="/">
-          <span role="img" aria-label="hotel building"></span>
           React Retreat
         </Link>
-      </div>
-     
+      </h1>
+
       <nav>
         {showNavigation()}
       </nav>
