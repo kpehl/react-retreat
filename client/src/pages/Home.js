@@ -25,9 +25,7 @@ const Home = () => {
       <h2>Welcome {name} to the React Retreat Resort!</h2>
       <CustomSlider/>
       <CategoryMenu />
-      <ProductList />
-      {/* <Cart /> */}
-      
+      <ProductList />      
     </div>
   );
 };
