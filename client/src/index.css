@@ -76,7 +76,8 @@ header li {
   list-style: none;
 }
 header img {
-  max-width: 15%;
+  max-width: 25%;
+  background-color: var(--light);
 }
 footer {
   background-color: var(--light);
