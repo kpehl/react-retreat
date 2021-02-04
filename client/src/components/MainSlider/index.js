@@ -5,15 +5,15 @@ import Slider from 'infinite-react-carousel';
 
 export default class CustomSlider extends Component {
   render() {
-    // const { name, ...props } = this.props
-    console.log("slider")
-    console.log(this.props)
+
+ const room = this.props.room
+
     const settings = {
       arrows: false,
       autoplay: true,
       duration: 300
     };
-    switch (this.props) {
+    switch (room) {
       //
       case 'King':
         return (

@@ -1,6 +1,5 @@
 const db = require('./connection');
 const { User, Room, Category, Booking } = require('../models');
-const { modelNames } = require('mongoose');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -82,8 +81,9 @@ db.once('open', async () => {
     {
       name: 'Suite',
       description:
-        'Featuring a plush bed and living space with extra seating, a sleeper sofa, and a TV that can be seen from every angle of the suite. Each studio suite includes a workstation, a wet bar, a refrigerator, and a microwave.',
+        'Featuring a plush bed and separate living space with extra seating, a sleeper sofa, and a TV that can be seen from every angle of the suite. Each suite includes a workstation, a wet bar, a refrigerator, and a microwave.',
       image: '/rooms/suite/collage.png',
+
       category: categories[0]._id,
       price: 299.99,
       quantity: 5,
@@ -105,7 +105,7 @@ db.once('open', async () => {
     {
       name: 'Double Queen',
       category: categories[1]._id,
-      description:'Enjoy sweeping views of the Cauayan Island Bacuit Bay Beach and its surrounding mountains and landscape through floor windows in our City View Rooms. These rooms features two Queen beds, valet closet, seating and a desk. With large baths and stand-alone showers, bathrooms are encased with frosted glass panels.',
+      description:'Enjoy sweeping views of the Cauayan Island Bacuit Bay Beach and its surrounding mountains and landscape through floor windows in our beach view rooms. These rooms features two Queen beds, valet closet, seating and a desk. With large baths and stand-alone showers, bathrooms are encased with frosted glass panels.',
       image: '/rooms/doubleQueen/collage1.png',
       price: 179.99,
       quantity: 20
@@ -113,7 +113,7 @@ db.once('open', async () => {
     {
       name: 'Queen',
       category: categories[1]._id,
-      description:'Praesent Begin planning your stay in one of our luxurious accommodations, including a Queen room, Walk-in rain shower and standalone tub and a balcony to look at the beautiful beaches of Cauayan.',
+      description:'Begin planning your stay in one of our luxurious accommodations, including a Queen bed, qalk-in rain shower and standalone tub and a balcony to look at the beautiful beaches of Cauayan.',
       image: '/rooms/queen/collage.png',
       price: 139.99,
       quantity: 50
@@ -122,7 +122,7 @@ db.once('open', async () => {
       name: 'Full',
       category: categories[2]._id,
       description:
-        'From chic designs to custom finishes, our full guest rooms create an atmosphere perfect for relaxing after a busy day at the beach.',
+        'From chic designs to custom finishes, our full guest rooms create an atmosphere perfect for relaxing after a busy day at the beach at an affordable price.',
       image: '/rooms/full/collage.png',
       price: 99.99,
       quantity: 50,

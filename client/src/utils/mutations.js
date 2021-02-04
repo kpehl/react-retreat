@@ -12,15 +12,14 @@ export const LOGIN = gql`
 `;
 
 export const ADD_ORDER = gql`
-  mutation addOrder($rooms: ID!){
-    addOrder(rooms: $rooms) {
-      purchaseDate
-      bookingDateStart
-      bookingDateEnd
-      rooms{
-        _id
+  mutation addOrder($_id: ID!, $input: currentBooking!) {
+    addOrder(_id: $_id, input: $input) {
+      _id
+      booking {
+        bookingDateStart
+        bookingDateEnd
       }
-      user {
+      room {
         _id
       }
     }
