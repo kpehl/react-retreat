@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className="container px-2">
       <div className="px-2">
-      <h2>Welcome, {name} to the React Retreat Resort!</h2>
+      <h2>Welcome{name? <span>, {name},</span> : null} to the React Retreat Resort!</h2>
       </div>
       <CustomSlider/>
       <CategoryMenu />

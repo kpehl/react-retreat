@@ -183,7 +183,7 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 .card {
-  width: 100%;
+  width: 30%;
   text-align: center;
   border-color: #276678;
 }
