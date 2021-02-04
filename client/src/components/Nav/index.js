@@ -1,6 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import logo from '../../assets/React-Retreat logo.png';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_USER } from "../../utils/queries";
 
@@ -12,6 +13,9 @@ function Nav() {
     user = data.user;
     admin = data.user.admin;
   }
+  if (Auth.loggedIn() && user === null) {
+    Auth.logout()
+  };
  
   function showNavigation() {
      if (Auth.loggedIn() && !admin) {
@@ -28,9 +32,11 @@ function Nav() {
               Logout
             </a>
           </li>
-          <Link to="/contact">
+          <li className="mx-1">
+            <Link to="/contact">
               Contact Us
             </Link>
+          </li>
         </ul>
       );
     } else if (Auth.loggedIn() && admin) {
@@ -47,9 +53,11 @@ function Nav() {
               Logout
             </a>
           </li>
-          <Link to="/contact">
+          <li className="mx-1">
+            <Link to="/contact">
               Contact Us
             </Link>
+          </li>
         </ul>
       )
     } else {
@@ -79,16 +87,14 @@ function Nav() {
     <header className="flex-row px-1">
 
       <div className="logo">
-      
-        <Link to="/">
+
+      <Link to="/">
+        <img src={logo} alt="React Retreat"/> 
           <span role="img" aria-label="hotel building"></span>
           React Retreat
         </Link>
-        
-
       </div>
-     
-     
+
 
       <nav>
         {showNavigation()}

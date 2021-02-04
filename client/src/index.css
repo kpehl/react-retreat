@@ -70,7 +70,13 @@ header {
 header a {
   color: var(--secondary);
   font-size:x-large;
-  
+}
+header li {
+  text-decoration: none;
+  list-style: none;
+}
+header img {
+  max-width: 15%;
 }
 footer {
   background-color: var(--light);
@@ -102,6 +108,9 @@ button[disabled] {
 img {
   max-width: 100%;
 }
+.collage{
+  max-width: 60%;
+}
 span[role="img"] {
   cursor: default;
 }
@@ -121,10 +130,14 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 .container {
-  width: 85%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+.reserve-container{
+  width: 65%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;  
 }
 .flex-row {
   display: flex;
@@ -213,4 +226,23 @@ input:focus {
   .card {
     width: 100%;
   }
+} 
+
+
+.logo {
+  position: sticky;
+  top: 50px;
+  z-index: 2;
+  /* background-color: #f6f5f5; */
+  
+}
+
+.logo img {
+  height: 50px;
+  /* margin-top: -30px; */
+}
+
+.carousel .slide img {
+  max-height: 100%;  /* change this to whatever you want */
+  width: 100%;
 }
