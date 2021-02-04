@@ -63,6 +63,12 @@ const typeDefs = gql`
     user: User
   }
 
+  input currentBooking {
+    bookingDateStart: String!
+    bookingDateEnd: String!
+    user: ID!
+  }
+
   type Query {
     categories: [Category]
     rooms(category: ID, name: String): [Room]
@@ -77,7 +83,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(rooms: ID!): Booking
+    addOrder(_id: ID!, input: currentBooking!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateRoom(_id: ID!, quantity: Int!): Room
     login(email: String!, password: String!): Auth

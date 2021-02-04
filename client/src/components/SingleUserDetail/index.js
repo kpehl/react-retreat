@@ -10,7 +10,7 @@ function SingleUserDetail({bookings}) {
                 <p>Confirmation Number: {booking._id}</p>
                 <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
                 {booking.rooms.map(({name}, index) => (
-                <p>Room: {name}</p>
+                <p key={index}>Room: {name}</p>
                 ))}
                 <p>Reservation Dates: <span>{new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>
             </div>

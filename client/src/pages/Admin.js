@@ -53,6 +53,7 @@ function ReservationHistory() {
                   { showDetails ? <SingleUserDetail bookings={(bookingArray.filter(booking => booking.user._id === user._id))} /> : null}
                 </div>
               ))}
+              <hr/>
               <h2>Bookings</h2>
               {bookingArray.map((booking) => (
                 <div key={booking._id} className="card-admin px-2">
