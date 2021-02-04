@@ -85,7 +85,11 @@ function Reservation() {
 
 
   return (
+<<<<<<< HEAD
     <div className="reserve-container my-2">
+=======
+    <div className="">
+>>>>>>> develop
       <h2>Reservation</h2>
       {state.cart.length ? (
         <div>

@@ -1,6 +1,5 @@
 const db = require('./connection');
 const { User, Room, Category, Booking } = require('../models');
-const { modelNames } = require('mongoose');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -83,7 +82,7 @@ db.once('open', async () => {
       name: 'Suite',
       description:
         'Featuring a plush bed and living space with extra seating, a sleeper sofa, and a TV that can be seen from every angle of the suite. Each studio suite includes a workstation, a wet bar, a refrigerator, and a microwave.',
-      image: 'imageExample.jpg',
+      image: 'rooms/suite/alexander-kaunas-67-sOi7mVIk-unsplash.jpg',
       category: categories[0]._id,
       price: 299.99,
       quantity: 5,
@@ -93,7 +92,7 @@ db.once('open', async () => {
       name: 'King',
       description:
         'Our most spacious rooms, which offer striking views of the glittering Cauayan Island Bacuit Bay Beach through the windows, the React Retreat King Room offers a king-sized bed and seating area with armchairs, occasional tables and a desk. A large bathroom features a walk-in shower and bath, with an adjoining walk-in wardrobe and valet closet.',
-      image: 'canned-coffee.jpg',
+      image: 'imageExample.jpg',
       category: categories[0]._id,
       price: 179.99,
       quantity: 15,
@@ -106,7 +105,7 @@ db.once('open', async () => {
       name: 'Double Queen',
       category: categories[1]._id,
       description:'Enjoy sweeping views of the Cauayan Island Bacuit Bay Beach and its surrounding mountains and landscape through floor windows in our City View Rooms. These rooms features two Queen beds, valet closet, seating and a desk. With large baths and stand-alone showers, bathrooms are encased with frosted glass panels.',
-      image: '/rooms/doubleQueen/room-5.jpeg',
+      image: 'rooms/doubleQueen/room-5.jpeg',
       price: 179.99,
       quantity: 20
     },
@@ -114,7 +113,7 @@ db.once('open', async () => {
       name: 'Queen',
       category: categories[1]._id,
       description:'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
+      image: 'rooms/queen/room-4.jpeg',
       price: 139.99,
       quantity: 50
     },
@@ -123,7 +122,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: '/rooms/full/room1.jpg',
+      image: 'rooms/full/kim-schouten-f7h2nTvEknM-unsplash.jpg',
       price: 99.99,
       quantity: 50,
       bookings: [bookings[3]._id]

@@ -38,7 +38,11 @@ const CartItem = ({ item }) => {
     }
   
 useEffect(() => {
+<<<<<<< HEAD
     if(startDate && endDate){      
+=======
+    if(startDate && endDate){
+>>>>>>> develop
         /* create new booking object here and add to room */
         dispatch({
             type: UPDATE_RESERVATION_DATES,
@@ -51,7 +55,11 @@ useEffect(() => {
                 room: item,
                 } 
           });
+<<<<<<< HEAD
           idbPromise("cart", "put", { ...item, bookings: item.bookings });    
+=======
+          idbPromise("cart", "put", { ...item, bookings: item.bookings });
+>>>>>>> develop
     }
 
 },[startDate, endDate]);
@@ -98,11 +106,18 @@ useEffect(() => {
       </div>
       <div>
         <div>
+<<<<<<< HEAD
           {item.name}, ${item.price} /per night.
         </div>
         <div>
 {/*           <span>Nights:</span>
           <span>{duration}</span>
+=======
+          {item.name}, ${item.price}
+        </div>
+        <div>
+          <span>Qty:</span>
+>>>>>>> develop
           <input
             type="number"
             placeholder="1"
@@ -115,7 +130,11 @@ useEffect(() => {
             onClick={() => removeFromCart(item)}
           >
             🗑️
+<<<<<<< HEAD
           </span> */}
+=======
+          </span>
+>>>>>>> develop
         </div>
         <div className="flex-row">
             {/* insert date picker */}

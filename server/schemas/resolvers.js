@@ -174,8 +174,7 @@ const resolvers = {
         }]);
         console.log(newbookings._id);
         
-/*         const updateBooking = await Booking.findByIdAndUpdate(newbookings._id, {$push: {rooms: currentRoom._id}}, {upsert: true});
-        console.log(updateBooking);*/
+
         return currentRoom;
       } 
 

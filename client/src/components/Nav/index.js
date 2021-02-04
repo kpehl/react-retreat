@@ -12,6 +12,9 @@ function Nav() {
     user = data.user;
     admin = data.user.admin;
   }
+  if (Auth.loggedIn() && user === null) {
+    Auth.logout()
+  };
  
   function showNavigation() {
      if (Auth.loggedIn() && !admin) {
@@ -28,9 +31,11 @@ function Nav() {
               Logout
             </a>
           </li>
-          <Link to="/contact">
+          <li className="mx-1">
+            <Link to="/contact">
               Contact Us
             </Link>
+          </li>
         </ul>
       );
     } else if (Auth.loggedIn() && admin) {
@@ -47,9 +52,11 @@ function Nav() {
               Logout
             </a>
           </li>
-          <Link to="/contact">
+          <li className="mx-1">
+            <Link to="/contact">
               Contact Us
             </Link>
+          </li>
         </ul>
       )
     } else {
@@ -76,19 +83,12 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
-
-      <div className="logo">
-      
+    <header className="flex-row px-1 space-between">
+      <h1>
         <Link to="/">
-          <span role="img" aria-label="hotel building"></span>
-          React Retreat
+          <img src="logo512.png" alt="react retreat logo" />
         </Link>
-        
-
-      </div>
-     
-     
+      </h1>
 
       <nav>
         {showNavigation()}

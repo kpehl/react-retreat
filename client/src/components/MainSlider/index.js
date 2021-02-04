@@ -6,7 +6,7 @@ import Slider from 'infinite-react-carousel';
 export default class CustomSlider extends Component {
   render() {
     const room = this.props.room
-    console.log(room)
+    // console.log(room)
     const settings = {
       arrows: false,
       autoplay: true,
