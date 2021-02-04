@@ -29,7 +29,7 @@ function ReservationHistory() {
       booking.duration = duration[index]
       totalCost[index] = (duration[index] * booking.rooms[0].price).toFixed(2);
       booking.totalCost = totalCost[index]
-      console.log(booking)
+      // console.log(booking)
     })
   }
 
@@ -39,10 +39,10 @@ function ReservationHistory() {
     setShowDetails(showDetails => !showDetails)
   };
   const clickHandler = (userID) => {
-    console.log(userID)
+    // console.log(userID)
     toggleDetails();
     setDetailUserID(userID);
-    console.log(detailUserID)
+    // console.log(detailUserID)
   }
 
   return (
