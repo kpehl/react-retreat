@@ -124,8 +124,6 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 .container {
-  width: 85%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -172,9 +170,13 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 .card {
-  width: 100%;
+  width: 30%;
   text-align: center;
-  border-color: #276678;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 100%;
+  text-align: center;
+  border-color: #276678; */
 }
 .card-contact {
   width: 25%;
