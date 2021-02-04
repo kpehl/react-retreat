@@ -36,11 +36,11 @@ function BookingHistory() {
           ← Back to Home
           </Link>
         <div class="row">
-          <div class="card-main px-2 py-2">
+          <div class="card-booking">
             {user && bookings ? (
               <>
-                <h2 "card-admin px-2 py-2 mb-3">Booking History for {user.firstName} {user.lastName}</h2>
-                <div className="flex-row">
+                <h2>Booking History for {user.firstName} {user.lastName}</h2>
+                <div className=" flex-row">
                   <p>If you need to change or cancel a confirmed booking, please contact our staff.</p>
                 </div>
                 {bookings.map(booking => (
