@@ -132,6 +132,12 @@ input:focus {
   margin-left: auto;
   margin-right: auto;
 }
+.reserve-container{
+  width: 65%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;  
+}
 .flex-row {
   display: flex;
   flex-wrap: wrap;
