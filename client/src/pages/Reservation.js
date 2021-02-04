@@ -45,13 +45,18 @@ function Reservation() {
   function calculateTotal() {
     let sum = 0;
     state.cart.forEach((item) => {
+        if(item.bookings.length > 0){
         let bookingsNumber = item.bookings.length;
+        console.log(bookingsNumber);
         let newstart = new Date(item.bookings[bookingsNumber -1].bookingDateStart);
         let newEnd = new Date(item.bookings[bookingsNumber -1].bookingDateEnd);
         
         var res = Math.abs(newEnd - newstart) / 1000;
         duration = Math.floor(res / 86400);
         sum = item.price * duration;
+        } else {
+            sum = 0;
+        }
     });
     if(isNaN(sum)){
         sum = 0;
@@ -85,11 +90,7 @@ function Reservation() {
 
 
   return (
-<<<<<<< HEAD
     <div className="reserve-container my-2">
-=======
-    <div className="">
->>>>>>> develop
       <h2>Reservation</h2>
       {state.cart.length ? (
         <div>
