@@ -19,7 +19,7 @@ function BookingHistory() {
     // console.log(user)
   }
 
-  const {data: bookingData } = useQuery(QUERY_BOOKINGS);
+  const { data: bookingData } = useQuery(QUERY_BOOKINGS);
 
   if (bookingData) {
     console.log('booking data present')
@@ -31,43 +31,45 @@ function BookingHistory() {
 
   return (
     <>
-      <div className="container my-1">
+      <div class="container flex-row">
         <Link to="/">
           ← Back to Home
           </Link>
-
-        {user && bookings ? (
-          <>
-            <h2>Booking History for {user.firstName} {user.lastName}</h2>
-            <div className="flex-row">
-                  <p>If you need to change or cancel a confirmed booking, please contact our staff.</p>
-            </div>
-            {bookings.map(booking => (
-              <div key={booking._id} className="my-2">
-                <h4>Confirmation Number: {booking._id}</h4>
-                <div>
-                    <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>  
-                    <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
-                  </div>
+        <div class="row">
+          <div class="card-main px-2 py-2">
+            {user && bookings ? (
+              <>
+                <h2 "card-admin px-2 py-2 mb-3">Booking History for {user.firstName} {user.lastName}</h2>
                 <div className="flex-row">
-                {booking.rooms.map(({ _id, name, price}, index) => (
-                    <div key={index} className="my-2">
-                      <Link to={`/rooms/${_id}`}>
-                        <p>{name}</p>
-                      </Link>
-                      <div>
-                        <p><span>${price}</span></p>
-                        <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>  
-                        <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
-                      </div>
-                    </div>
-                ))}
+                  <p>If you need to change or cancel a confirmed booking, please contact our staff.</p>
                 </div>
-              </div>
-            ))}
-          </>
-        ) : null}
-
+                {bookings.map(booking => (
+                  <div key={booking._id} className="my-2">
+                    <h4>Confirmation Number: {booking._id}</h4>
+                    <div>
+                      <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>
+                      <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
+                    </div>
+                    <div className="flex-row">
+                      {booking.rooms.map(({ _id, name, price }, index) => (
+                        <div key={index} className="my-2">
+                          <Link to={`/rooms/${_id}`}>
+                            <p>{name}</p>
+                          </Link>
+                          <div>
+                            <p><span>${price}</span></p>
+                            <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>
+                            <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </>
+            ) : null}
+          </div>
+        </div>
       </div>
 
     </>)
