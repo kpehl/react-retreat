@@ -108,6 +108,9 @@ button[disabled] {
 img {
   max-width: 100%;
 }
+.collage{
+  max-width: 60%;
+}
 span[role="img"] {
   cursor: default;
 }
@@ -127,8 +130,6 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 .container {
-  width: 85%;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -181,9 +182,13 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 .card {
-  width: 100%;
+  width: 30%;
   text-align: center;
-  border-color: #276678;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 100%;
+  text-align: center;
+  border-color: #276678; */
 }
 .card-contact {
   width: 25%;
@@ -225,4 +230,23 @@ input:focus {
   .card {
     width: 100%;
   }
+} 
+
+
+.logo {
+  position: sticky;
+  top: 50px;
+  z-index: 2;
+  /* background-color: #f6f5f5; */
+  
+}
+
+.logo img {
+  height: 50px;
+  /* margin-top: -30px; */
+}
+
+.carousel .slide img {
+  max-height: 100%;  /* change this to whatever you want */
+  width: 100%;
 }
