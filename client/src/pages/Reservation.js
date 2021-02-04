@@ -41,11 +41,21 @@ function Reservation() {
     }
   }, [state.cart.length, dispatch]);
 
+  let duration = 0;
   function calculateTotal() {
     let sum = 0;
     state.cart.forEach((item) => {
-      sum += item.price * item.purchaseQuantity;
+        let bookingsNumber = item.bookings.length;
+        let newstart = new Date(item.bookings[bookingsNumber -1].bookingDateStart);
+        let newEnd = new Date(item.bookings[bookingsNumber -1].bookingDateEnd);
+        
+        var res = Math.abs(newEnd - newstart) / 1000;
+        duration = Math.floor(res / 86400);
+        sum = item.price * duration;
     });
+    if(isNaN(sum)){
+        sum = 0;
+    }
     return sum.toFixed(2);
   }
 
@@ -75,7 +85,7 @@ function Reservation() {
 
 
   return (
-    <div className="">
+    <div className="reserve-container my-2">
       <h2>Reservation</h2>
       {state.cart.length ? (
         <div>
