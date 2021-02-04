@@ -14,15 +14,17 @@ const Home = () => {
   let admin;
   if (data) {
     user = data.user;
-    name = user.firstName +' '+  user.lastName
+    name = user.firstName;
     admin = data.user.admin;
   }
   if (Auth.loggedIn() && user === null) {
     Auth.logout()
   };
   return (
-    <div className="container">
-      <h2>Welcome {name} to the React Retreat Resort!</h2>
+    <div className="container px-2">
+      <div className="px-2">
+      <h2>Welcome, {name} to the React Retreat Resort!</h2>
+      </div>
       <CustomSlider/>
       <CategoryMenu />
       <ProductList />      
