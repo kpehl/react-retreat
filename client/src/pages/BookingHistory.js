@@ -35,41 +35,39 @@ function BookingHistory() {
         <Link className="link" to="/">
           ← Back to Home
           </Link>
-        <div className="row">
-          <div class="card-main px-2 py-2">
-            {user && bookings ? (
+          <div className="row">
+            <div className="card-main px-2 py-2">
+              {user && bookings ? (
               <>
-                <h2 className="booking-h2">Booking History for {user.firstName} {user.lastName}</h2>
+                <h2>Booking History for {user.firstName} {user.lastName}</h2>
                 <div className="flex-row">
                   <p>If you need to change or cancel a confirmed booking, please contact our staff.</p>
                 </div>
-                {bookings.map(booking => (
-                  <div key={booking._id} className="card-booking px-2 py-2 mb-3">
-                    <h4>Confirmation Number: {booking._id}</h4>
-                    <div>
-                      <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>
-                      <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
-                    </div>
-                    <div className="card-booking px-2 py-2 mb-3">
-                      {booking.rooms.map(({ _id, name, price }, index) => (
-                        <div key={index} className="my-2">
-                          <Link to={`/rooms/${_id}`}>
-                            <p>{name}</p>
-                          </Link>
-                          <div>
-                            <p><span>${price}</span></p>
-                            <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>
-                            <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
-                          </div>
+                {bookings.map((booking, bookingIndex) => (
+                <div key={booking._id} className="my-2">
+                  <h4>Confirmation Number: {booking._id}</h4>
+                  <div className="card-booking px-2 py-2 mb-3">
+                  {booking.rooms.map(({ _id, name, price}, index) => (
+                    <div key={index} className="my-2">
+                        <Link to={`/rooms/${_id}`}>
+                          <p>{name}</p>
+                        </Link>
+                        <div>
+                          <p>Total Nights: {duration[bookingIndex]}</p>
+                          <p><span>${totalCost[bookingIndex]}</span></p>
+                          <p><span>Reservation Dates: {new Date(parseInt(booking.bookingDateStart)).toLocaleDateString()} to {new Date(parseInt(booking.bookingDateEnd)).toLocaleDateString()}</span></p>  
+                          <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
                         </div>
-                      ))}
                     </div>
+                  ))}
                   </div>
-                ))}
-              </>
-            ) : null}
+                </div>
+              ))}
+            </>
+          ) : null}
+            </div>
           </div>
-        </div>
+
       </div>
 
     </>)

@@ -14,8 +14,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@emotion/react": "^11.1.4",
-    "dotenv": "^8.2.0",
     "if-env": "^1.0.4",
     "infinite-react-carousel": "^1.2.11",
     "react-icons": "^4.1.0",
