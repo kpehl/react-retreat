@@ -8,31 +8,25 @@ import { QUERY_USER, QUERY_BOOKINGS } from "../utils/queries";
 function BookingHistory() {
   let user;
   let bookings;
-  let duration = [];
-  let totalCost = [];
 
   const { data: userData } = useQuery(QUERY_USER);
   // console.log(userData)
 
   if (userData) {
-    // console.log('user data present');
+    console.log('user data present');
     // console.log(userData);
     user = userData.user;
     // console.log(user)
   }
 
-  const {data: bookingData } = useQuery(QUERY_BOOKINGS);
+  const { data: bookingData } = useQuery(QUERY_BOOKINGS);
 
   if (bookingData) {
-    // console.log('booking data present')
+    console.log('booking data present')
     let bookingArray = bookingData.bookings;
+    // console.log(bookingArray)
     bookings = bookingArray.filter(booking => booking.user._id === user._id)
-    bookings = bookings.sort((a,d) => a.bookingDateStart - d.bookingDateStart);
-    bookings.forEach((booking, index) => {
-      let res = Math.abs(booking.bookingDateEnd - booking.bookingDateStart) / 1000;
-      duration[index] = Math.floor(res / 86400);
-      totalCost[index] = (duration[index] * booking.rooms[0].price).toFixed(2);
-    })
+    // console.log(bookings)
   }
 
   return (
@@ -73,6 +67,7 @@ function BookingHistory() {
           ) : null}
             </div>
           </div>
+
       </div>
 
     </>)
