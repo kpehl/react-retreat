@@ -31,6 +31,7 @@
 </ul>          
 
 <h2 id="usage"> Usage </h2>
+
 <p>Hotels need engaging and functional websites to attract potential guests and entice them to make a reservation and come to stay.  These websites must be both beautiful and easy to use.  The goal of our team was to create one of these websites for our class.  The React Retreat is a (fictional) luxury hotel that wants to be able to advertise to guests and allow them to make reservations using their website. Click on the Live Link above to see the website in action.</p>
 
 <h2 id="screen"> Screenshots </h2>
