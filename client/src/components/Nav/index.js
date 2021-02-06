@@ -90,8 +90,7 @@ function Nav() {
 
       <Link to="/">
         <img src={logo} alt="React Retreat"/> 
-          <span role="img" aria-label="hotel building"></span>
-          React Retreat
+          <a className="logo-name">React Retreat</a>
         </Link>
       </div>
 
