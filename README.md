@@ -35,7 +35,7 @@
 <h5><a href= "">Portfolio</a></h5>  
 <h5><a href= "mailto:mikegiddings@gmail.com">E-Mail</a></h5>       
 <h5><a href= "https://www.linkedin.com/in/michaelgiddings/">LinkedIn</a></h5>
-[MichaelGiddings.com](https://michaelgiddings.com)
+<h5><a href= "https://michaelgiddings.com">MichaelGiddings.com</a></h5>
 <hr>
 
 
