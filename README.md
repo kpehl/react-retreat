@@ -36,17 +36,17 @@
 <h2 id="screen"> Screenshots </h2>
 
 <h3 id="test"> Test </h3>
-<img width="600" height="350" src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-gif.gif" alt="gif" >
+<img width="600" height="350" src= "docs/demo/hotel-gif.gif" alt="gif" >
 
 <h4> Desktop </h4>
 <a>Hotel Main Page</a>
-<img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-main.png" alt="image of main page" >
+<img src= "docs/demo/hotel-main.png" alt="image of main page" >
 <a>Hotel Administrative Page</a>
-<img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-admin.png" alt="image of administrative page" >
+<img src= "docs/demo/hotel-admin.png" alt="image of administrative page" >
 <a>Hotel Contact Page</a>
-<img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-contact_page.png" alt= "image of contact page">
+<img src= "docs/demo/hotel-contact_page.png" alt= "image of contact page">
 <a>Hotel Checkout Page</a>
-<img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-checkout.png" alt= "image of checkout page">
+<img src= "docs/demo/hotel-checkout.png" alt= "image of checkout page">
 
 <h4> Link to Demo Video </h4>
 <h5><a href= "https://drive.google.com/file/d/1pblEpQLujDUObZoGIKOkod1rsbJIUDGC/view">Demo</a></h5>
