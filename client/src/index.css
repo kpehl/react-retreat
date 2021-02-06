@@ -79,6 +79,18 @@ header img {
   max-width: 25%;
   background-color: var(--light);
 }
+
+@media screen and (max-width: 992px) {
+  nav {
+     font-size: medium;
+  }
+}
+@media screen and (max-width: 992px) {
+  header a {
+     font-size: medium;
+  }
+}
+
 footer {
   background-color: var(--light);
   /* color: var(--secondary); */
@@ -134,6 +146,13 @@ input:focus {
   margin-left: auto;
   margin-right: auto;
 }
+.container-sign {
+  margin-left: 35%;
+  margin-right: auto;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
 .reserve-container{
   width: 65%;
   max-width: 1200px;
@@ -191,13 +210,24 @@ input:focus {
   padding-right: 30px
 }
 .card-contact {
-  width: 25%;
+  width: 100%;
   text-align: center;
   border-color: #276678;
+  padding-left: 10%;
+  padding-right: 10%;
 }
+@media screen and (max-width: 768px) {
+  .card-contact {
+    width: 100%;
+  }
+  .card-contact img {
+    width: 40%;
+  }
+} 
 .card-deck {
   margin-top: var(--spacing-two);
   margin-bottom: var(--spacing-two);
+
 }
 .card-main {
   width: 100%;
@@ -252,10 +282,19 @@ input:focus {
   /* background-color: #f6f5f5; */
   
 }
+.logo-name {
+  display:inline;
+}
 
 .logo img {
-  height: 50px;
+  height: 25px;
   /* margin-top: -30px; */
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+     top: 15px;
+  }
 }
 
 .carousel .slide img {

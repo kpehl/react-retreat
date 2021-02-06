@@ -6,7 +6,7 @@ const Contact = (props) => {
         <div class="card-deck">
             <div class="flex-row">
                 <div class="row card-contact px-2 py-2">
-                    <CardImg top width="100%" src="/images/profile/cassie.jpeg" alt="Card image cap" />
+                    <CardImg top width="30%" src="/images/profile/cassie.jpeg" alt="Card image cap" />
                     <CardBody>
                         <CardTitle tag="h5">Kathleen Pehl</CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">Resort Director</CardSubtitle>
@@ -17,7 +17,7 @@ const Contact = (props) => {
             </div>
             <div class="flex-row">
                 <div class="row card-contact px-2 py-2">
-                    <CardImg top width="100%" src="/images/profile/michael.jpeg" alt="Card image cap" />
+                    <CardImg top width="30%" src="/images/profile/michael.jpeg" alt="Card image cap" />
                     <CardBody>
                         <CardTitle tag="h5">Michael Giddings</CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">Resort Chief Financial Officer</CardSubtitle>
@@ -28,7 +28,7 @@ const Contact = (props) => {
             </div>
             <div class="flex-row">
                 <div class="row card-contact px-2 py-2">
-                    <CardImg top width="100%" src="/images/profile/damaris.jpeg" alt="Card image cap" />
+                    <CardImg top width="30%" src="/images/profile/damaris.jpeg" alt="Card image cap" />
                     <CardBody>
                         <CardTitle tag="h5">Damaris Campos</CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">Resort Chief Marketing Officer</CardSubtitle>
@@ -39,7 +39,7 @@ const Contact = (props) => {
             </div>
             <div class="flex-row">
                 <div class="row card-contact px-2 py-2">
-                    <CardImg top width="100%" src="/images/profile/cristian.png" alt="Card image cap" />
+                    <CardImg top width="30%" src="/images/profile/cristian.png" alt="Card image cap" />
                     <CardBody>
                         <CardTitle tag="h5">Cristian Acevedo</CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">Resort Chief Information Officer</CardSubtitle>
