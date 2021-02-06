@@ -1,7 +1,7 @@
 <img align="left" src= "https://img.shields.io/badge/License-MIT-green">
-<h1 align= "center">React-Retreat</h1>
+<h1 href= "https://github.com/kpehl/react-retreat" align= "center">React-Retreat</h1>
 <h2>Live Link</h2>
-<h3><a href= "https://github.com/kpehl/react-retreat">Live Link</a></h3>  
+<h3><a href= "https://react-retreat.herokuapp.com/">Live Link</a></h3>  
 <h2> Table of Contents </h2>
 <li><a href="#description">Description</a></li>  
 <li><a href="#tech">Technology Stack</a></li>
@@ -31,13 +31,17 @@
 
 <h2 id="screen"> ScreenShots </h2>
 
-<h2 id="test"> Test </h2>
+<h3 id="test"> Test </h3>
 <img width="600" height="350" src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-gif.gif" alt="gif" >
 
 <h4> Desktop </h4>
+<a>Hotel Main Page"</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-main.png" alt="image of main page" >
+<a>Hotel Administrative Page"</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-admin.png" alt="image of administrative page" >
+<a>Hotel Contact Page"</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-contact_page.png" alt= "image of contact page">
+<a>Hotel Checkout Page"</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-checkout.png" alt= "image of checkout page">
 
 <h4> Link to Demo Video </h4>
@@ -47,14 +51,16 @@
 <h2 id="contributors"> Contributors/ Contact</h2>
 <h4><a href= "https://github.com/kpehl">Katheleen Pehl</a></h4>
 <img align="right" width="100" height="100" src="https://avatars.githubusercontent.com/u/30782087?s=400&u=60b563877f88aa7bc5a67adca7904d9fd7657d16&v=4 alt="Github Profile Image"">
-<h5><a href= "">Portfolio</a></h5>  
-<h5><a href= "mailto:email goes here">E-Mail</a></h5>       
-<h5><a href= "">LinkedIn</a></h5>
+<h5><a href= "kpehl.githib.io">Portfolio</a></h5>  
+<h5><a href= "kathleen-pehl.net">Portfolio</a></h5>  
+<h5><a href= "katheen.pehl@gmail.com">E-Mail</a></h5>       
+<h5><a href= "https://www.linkedin.com/in/kathleen-pehl-77bb1710">LinkedIn</a></h5>
 <hr>
 
 <h4><a href= "https://github.com/fondofhats">Michael Giddings</a></h4>
 <img align="right" width="100" height="100" src="https://avatars.githubusercontent.com/u/11549316?s=400&u=9cbb3efedf0845c6fb20524c104ba92fff38c871&v=4 alt="Github Profile Image"">
-<h5><a href= "">Portfolio</a></h5>  
+<h5><a href= "fondofhats.github.io">Portfolio</a></h5>  
+<h5><a href= "http://michaelgiddings.com/">Portfolio</a></h5>  
 <h5><a href= "mailto:mikegiddings@gmail.com">E-Mail</a></h5>       
 <h5><a href= "https://www.linkedin.com/in/michaelgiddings/">LinkedIn</a></h5>
 <hr>
