@@ -35,13 +35,13 @@
 <img width="600" height="350" src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-gif.gif" alt="gif" >
 
 <h4> Desktop </h4>
-<a>Hotel Main Page"</a>
+<a>Hotel Main Page</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-main.png" alt="image of main page" >
-<a>Hotel Administrative Page"</a>
+<a>Hotel Administrative Page</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-admin.png" alt="image of administrative page" >
-<a>Hotel Contact Page"</a>
+<a>Hotel Contact Page</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-contact_page.png" alt= "image of contact page">
-<a>Hotel Checkout Page"</a>
+<a>Hotel Checkout Page</a>
 <img src= "https://github.com/kpehl/react-retreat/blob/feature/readme/client/public/images/demo/hotel-checkout.png" alt= "image of checkout page">
 
 <h4> Link to Demo Video </h4>
