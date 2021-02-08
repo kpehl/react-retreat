@@ -89,8 +89,8 @@ function Nav() {
       <div className="logo">
 
       <Link to="/">
-        <img src={logo} alt="React Retreat"/> 
-          <a className="logo-name">React Retreat</a>
+        <img className="logo" src={logo} alt="React Retreat"/> 
+          <span className="logo-name">React Retreat</span>
         </Link>
       </div>
 
