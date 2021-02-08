@@ -6,7 +6,7 @@ function SingleUserDetail({bookings}) {
   return (
       <>
         {bookings? bookings.map(booking => (
-            <div className="card px-1 py-1" key={booking._id}>
+            <div className="card-admin px-1 py-1" key={booking._id}>
                 <h4>Confirmation Number: {booking._id}</h4>
                 <p>Purchase Date: {new Date(parseInt(booking.purchaseDate)).toLocaleDateString()}</p>
                 {booking.rooms.map(({name}, index) => (
